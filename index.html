@@ -73,7 +73,7 @@ pintrk('page');
         }
         .payment-logos img {
             height: 32px;
-            margin: 0 8px;
+            margin: 0 4px; /* Adjusted margin */
         }
 
         /* Other original styles */
@@ -207,7 +207,7 @@ pintrk('page');
         </div>
     </div>
     
-    <!-- Step 2: Payment Method Selection Modal (UPDATED) -->
+    <!-- Step 2: Payment Method Selection Modal -->
     <div id="paymentMethodModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -216,12 +216,13 @@ pintrk('page');
              <div id="payment-methods" class="flex flex-col gap-4 mt-4">
               <!-- Paiement en ligne -->
               <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="online">
-                <div class="flex items-center gap-3 p-4">
-                  <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-xl">
-                    <!-- Visa/Mastercard Icons -->
+                <div class="flex items-center justify-between p-4">
+                  <!-- Icon on the Left -->
+                  <div class="w-auto h-10 flex items-center justify-center bg-blue-50 rounded-xl p-2">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-6" alt="Visa" onerror="this.style.display='none'">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" class="h-6 ml-1" alt="Mastercard" onerror="this.style.display='none'">
                   </div>
+                  <!-- Text on the Right -->
                   <span class="font-bold text-lg text-gray-800">Paiement en ligne</span>
                 </div>
                 <!-- Details: hidden by default -->
@@ -236,17 +237,12 @@ pintrk('page');
               </div>
               <!-- Paiement à la livraison -->
               <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="cod">
-                <div class="flex items-center gap-3 p-4">
-                  <div class="w-10 h-10 flex items-center justify-center bg-green-50 rounded-xl">
-                    <!-- SVG Icon: Hand with cash (simple and clear) -->
-                    <svg width="28" height="28" fill="none" viewBox="0 0 32 32">
-                      <rect x="12" y="6" width="14" height="8" rx="2" fill="#4ade80"/>
-                      <rect x="13.5" y="7.5" width="11" height="5" rx="1" fill="#fff"/>
-                      <path d="M8 22c0-2 2-2 3-2h9c2 0 3 0 3 2s-1 2-3 2H10c-1.2 0-2-.8-2-2Z" fill="#a3e635"/>
-                      <path d="M11 18c0-1 1-1 2-1h7c1 0 2 0 2 1s-1 1-2 1h-7c-1 0-2 0-2-1Z" fill="#fde68a"/>
-                      <path d="M7 22.5c0 2 1.5 3 3 3h10c2 0 3-1 3-3" stroke="#22c55e" stroke-width="2"/>
-                    </svg>
+                <div class="flex items-center justify-between p-4">
+                  <!-- Icon on the Left -->
+                  <div class="w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden">
+                     <img src="https://i.postimg.cc/1tw5r2nf/Screenshot-20250615-204032-Chrome.jpg" class="h-full w-full object-cover" alt="Paiement à la livraison" onerror="this.onerror=null;this.src='https://placehold.co/40x40/cccccc/ffffff?text=COD';">
                   </div>
+                  <!-- Text on the Right -->
                   <span class="font-bold text-lg text-gray-800">Paiement à la livraison</span>
                 </div>
                 <!-- Details: hidden by default -->
@@ -291,7 +287,7 @@ pintrk('page');
         </div>
     </div>
 
-    <!-- Step 3b: COD Invoice Modal -->
+    <!-- Step 3b: COD Invoice Modal (UPDATED) -->
     <div id="invoiceCodModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -300,12 +296,12 @@ pintrk('page');
                 <div class="invoice-line"><span>Frais de livraison (à payer maintenant)</span><span class="font-bold text-blue-600">10.00€</span></div>
                 <div class="invoice-line"><span>Produit (à payer à la livraison)</span><span>39.00€</span></div>
             </div>
-             <p class="text-xs text-gray-500 my-4">Payez les frais de livraison maintenant pour confirmer votre commande. Le reste sera dû au livreur.</p>
+             <p class="text-xs text-gray-500 my-4">Pour démarrer le processus d'expédition, veuillez régler les frais de livraison de notre partenaire <b>DHL</b>. Le montant restant du produit sera dû au livreur à la réception.</p>
             <button id="completeCodOrderBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition text-lg flex items-center justify-center gap-3">
                 Payer les frais et commander (10.00€)
             </button>
              <div class="flex items-center justify-center gap-4 mt-4 payment-logos">
-                <img src="https://logowik.com/content/uploads/images/dhl-new-20212730.jpg" alt="DHL" style="height:28px;" onerror="this.style.display='none'">
+                <img src="https://i.postimg.cc/JhtQ0cyT/images-10.png" alt="DHL" style="height:28px;" onerror="this.style.display='none'">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" onerror="this.style.display='none'">
                 <span style="font-size:1.5rem; color:#15803d;">🔒</span>
             </div>
@@ -431,7 +427,7 @@ pintrk('page');
             });
         }
         
-        // --- NEW SCRIPT FOR PAYMENT METHOD SELECTION ---
+        // --- SCRIPT FOR PAYMENT METHOD SELECTION ---
         const paymentCards = document.querySelectorAll('.payment-card');
         paymentCards.forEach(card => {
           card.addEventListener('click', () => {

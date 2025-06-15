@@ -20,7 +20,7 @@ pintrk('page');
 <!-- end Pinterest Tag -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АігРоds Pro 2 - Offre Exclusive</title>
+    <title>AirPods Pro 2 - Offre Exclusive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -35,16 +35,10 @@ pintrk('page');
         .show-cart-bar { display:flex!important; top: 20px; opacity: 1;}
         .modal { display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;
             background:rgba(0,0,0,0.40);align-items:center;justify-content:center;z-index:10001;}
-        .modal-content {background:#fff;border-radius:18px;padding:30px 20px 20px 20px;
-            box-shadow:0 8px 40px rgba(0,0,0,0.14);width:100%;max-width:450px;text-align:center;position:relative;}
+        .modal-content {background:#fff;border-radius:18px;padding:2rem;
+            box-shadow:0 8px 40px rgba(0,0,0,0.14);width:100%;max-width:480px;text-align:center;position:relative;}
         .close-btn {position:absolute;right:18px;top:16px;font-size:1.5rem;color:#bdbdbd;cursor:pointer;}
         .close-btn:hover {color:#2563eb;}
-        .select-color label { cursor:pointer;display:flex;flex-direction:column;align-items:center;}
-        .select-color input[type="radio"] {position:absolute;opacity:0;width:0;height:0;}
-        .select-color input[type="radio"]:checked + div { border-color:#2563eb; box-shadow:0 0 0 2px #2563eb90; }
-        .select-color .color-option-display {border:2px solid #e5e7eb;border-radius:0.75rem;padding:0.5rem;
-            transition:all 0.2s;display:flex;flex-direction:column;align-items:center;background:#fafbff;}
-        .select-color img { width:56px; height:56px; object-fit:contain; margin-bottom:0.25rem; }
         .quantity-input {width:48px;text-align:center;border:1px solid #d1d5db;
             border-radius:0.375rem;background:#f3f4f6;font-weight:700;padding:0.25rem 0;}
         .animate-spin {animation:spin 1s linear infinite;} @keyframes spin { to{transform:rotate(360deg);} }
@@ -53,128 +47,58 @@ pintrk('page');
         .policy-modal {display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:20000;background:rgba(0,0,0,0.40);align-items:center;justify-content:center;}
         .policy-content {background:#fff;border-radius:16px;padding:28px;max-width:500px;width:95%;box-shadow:0 8px 40px rgba(0,0,0,0.13);max-height: 80vh; overflow-y: auto; text-align: left;}
         .policy-content h2 { text-align: center; }
-        .policy-content p, .policy-content ul { margin-bottom: 1rem; }
-        .policy-content ul { list-style: disc; padding-left: 20px; }
-
-        /* Logo Animation */
-        .logo-container { position: relative; width: 56px; height: 56px; margin-bottom: 0.5rem; cursor: pointer; }
-        .logo-image {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: contain;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
-        }
-        .logo-image.active {
-            opacity: 1;
-            transform: translateY(0);
+        
+        #paymentMethodModal .modal-content {
+            max-width: 520px;
         }
 
-        /* Shiny Silver Text Effect */
-        .shiny-silver-text {
-            background: linear-gradient(170deg, #f8f8f8 5%, #d8d8d8 30%, #b8b8b8 50%, #a0a0a0 70%, #c0c0c0 95%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #b8b8b8;
-            text-shadow: 0px 1px 2px rgba(255,255,255,0.4),
-                         0px -1px 1px rgba(50,50,50,0.1);
-            cursor: pointer;
-        }
-
-        /* Top Navigation Menu */
-        #topNavMenu {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 0.5rem 0;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            z-index: 30;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
-        #topNavMenu.nav-open {
-            max-height: 300px;
-            padding: 1rem 0;
-        }
-        #topNavMenu ul { list-style: none; padding: 0; margin: 0; text-align: center; }
-        #topNavMenu ul li a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #374151;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        #topNavMenu ul li a:hover {
-            background-color: #f3f4f6;
-            color: #1d4ed8;
-        }
-
-        /* Sticky Floating Order Button (Bottom) */
-        #floatingOrderBtn {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            z-index: 999;
-            display: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
-            opacity: 0;
-            transform: translate(-50%, 100%);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-        }
-        #floatingOrderBtn.visible {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 -2px 10px rgba(37, 99, 235, 0.2), 0 0 0 0px rgba(37, 99, 235, 0.3); }
-            70% { box-shadow: 0 -2px 15px rgba(37, 99, 235, 0.4), 0 0 0 10px rgba(37, 99, 235, 0); }
-            100% { box-shadow: 0 -2px 10px rgba(37, 99, 235, 0.2), 0 0 0 0px rgba(37, 99, 235, 0); }
-        }
-        #floatingOrderBtn.visible {
-            animation: pulseGlow 2s infinite ease-in-out, gentleShake 0.5s ease-in-out;
-        }
-        #floatingOrderBtn:hover {
-            transform: translate(-50%, -5px);
-        }
-        @keyframes gentleShake {
-            0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
-            25% { transform: translate(-50%, 0) rotate(-2deg); }
-            75% { transform: translate(-50%, 0) rotate(2deg); }
-        }
-        #floatingOrderBtn.shake {}
-
-        /* Reviews Section */
-        #reviews-section { padding-top: 2rem; padding-bottom: 3rem; background-color: #f9fafb; }
-        .review-card {
-            background-color: white;
+        /* Invoice Styles */
+        .invoice-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 1.5rem;
-            transition: transform 0.2s ease-in-out;
+            text-align: left;
         }
-        .review-card:hover { transform: translateY(-5px); }
-        .review-avatar { width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover; border: 2px solid #e5e7eb; }
-        .review-stars { color: #f59e0b; margin-bottom: 0.5rem; }
-        .trustpilot-badge { 
-            max-height: 70px;
-            max-width: 250px;
-            width: auto; 
-            margin-top: 1rem; 
-            margin-bottom: 2rem; 
+        .invoice-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .invoice-total {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
         }
         .payment-logos img {
             height: 32px;
             margin: 0 8px;
         }
+
+        /* Other original styles */
+        .logo-container { position: relative; width: 56px; height: 56px; margin-bottom: 0.5rem; cursor: pointer; }
+        .logo-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transform: translateY(10px); transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out; }
+        .logo-image.active { opacity: 1; transform: translateY(0); }
+        .shiny-silver-text { background: linear-gradient(170deg, #f8f8f8 5%, #d8d8d8 30%, #b8b8b8 50%, #a0a0a0 70%, #c0c0c0 95%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #b8b8b8; text-shadow: 0px 1px 2px rgba(255,255,255,0.4), 0px -1px 1px rgba(50,50,50,0.1); cursor: pointer; }
+        #topNavMenu { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 0.5rem 0; position: absolute; top: 100%; left: 0; right: 0; z-index: 30; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+        #topNavMenu.nav-open { max-height: 300px; padding: 1rem 0; }
+        #topNavMenu ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+        #topNavMenu ul li a { display: block; padding: 0.75rem 1rem; color: #374151; text-decoration: none; font-weight: 500; transition: background-color 0.2s, color 0.2s; }
+        #topNavMenu ul li a:hover { background-color: #f3f4f6; color: #1d4ed8; }
+        #floatingOrderBtn { position: fixed; bottom: 20px; left: 50%; z-index: 999; display: block; padding: 0.75rem 1.5rem; font-size: 1rem; box-shadow: 0 -2px 10px rgba(0,0,0,0.15); opacity: 0; transform: translate(-50%, 100%); transition: opacity 0.4s ease-out, transform 0.4s ease-out; }
+        #floatingOrderBtn.visible { opacity: 1; transform: translate(-50%, 0); animation: pulseGlow 2s infinite ease-in-out, gentleShake 0.5s ease-in-out; }
+        #floatingOrderBtn:hover { transform: translate(-50%, -5px); }
+        @keyframes pulseGlow { 0% { box-shadow: 0 -2px 10px rgba(37, 99, 235, 0.2), 0 0 0 0px rgba(37, 99, 235, 0.3); } 70% { box-shadow: 0 -2px 15px rgba(37, 99, 235, 0.4), 0 0 0 10px rgba(37, 99, 235, 0); } 100% { box-shadow: 0 -2px 10px rgba(37, 99, 235, 0.2), 0 0 0 0px rgba(37, 99, 235, 0); } }
+        @keyframes gentleShake { 0%, 100% { transform: translate(-50%, 0) rotate(0deg); } 25% { transform: translate(-50%, 0) rotate(-2deg); } 75% { transform: translate(-50%, 0) rotate(2deg); } }
+        .review-card { background-color: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 1.5rem; transition: transform 0.2s ease-in-out; }
+        .review-card:hover { transform: translateY(-5px); }
+        .review-avatar { width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem; object-fit: cover; border: 2px solid #e5e7eb; }
+        .review-stars { color: #f59e0b; margin-bottom: 0.5rem; }
+        .trustpilot-badge { max-height: 70px; max-width: 250px; width: auto; margin-top: 1rem; margin-bottom: 2rem; }
+        .payment-card.border-blue-600 { border-color: #2563eb; }
+        .payment-card.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -184,17 +108,17 @@ pintrk('page');
     </button>
 
     <div id="cartBar" class="cart-bar">
-        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds" class="w-10 h-10 object-contain rounded-lg border border-gray-200">
+        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods" class="w-10 h-10 object-contain rounded-lg border border-gray-200" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f0f0f0/333?text=Img';">
         <span>🛒 Produit ajouté au panier</span>
     </div>
 
     <header id="mainHeader" class="w-full pt-5 pb-2 px-4 flex flex-col items-center bg-white sticky top-0 z-40">
         <div id="logoArea" class="flex flex-col items-center cursor-pointer">
             <div class="logo-container">
-                <img id="logoImg1" src="https://i.postimg.cc/GtJNm9yD/Screenshot-20250525-200139-Chrome.jpg" alt="Logo АігРоd Style 1" class="logo-image active" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
-                <img id="logoImg2" src="https://i.postimg.cc/yNpbtZsm/АррIе -Logosu.png" alt="Logo АігРоd Style 2" class="logo-image" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
+                <img id="logoImg1" src="https://i.postimg.cc/GtJNm9yD/Screenshot-20250525-200139-Chrome.jpg" alt="Logo AirPod Style 1" class="logo-image active" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
+                <img id="logoImg2" src="https://i.postimg.cc/yNpbtZsm/Apple-Logosu.png" alt="Logo AirPod Style 2" class="logo-image" onerror="this.src='https://placehold.co/56x56/cccccc/ffffff?text=Logo'; this.alt='Logo indisponible'">
             </div>
-            <span class="text-3xl font-extrabold tracking-tight mb-0 shiny-silver-text" style="letter-spacing:-1px;">АігРоd </span>
+            <span class="text-3xl font-extrabold tracking-tight mb-0 shiny-silver-text" style="letter-spacing:-1px;">Airpod</span>
         </div>
         <nav id="topNavMenu">
             <ul>
@@ -205,555 +129,466 @@ pintrk('page');
         </nav>
     </header>
 
-    <section id="home" class="container mx-auto px-4 pt-4 pb-7 flex flex-col items-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-center leading-tight text-gray-900 mb-3">Offre exclusive sur АігРоds Pro 2 !</h1>
-        <p class="text-lg text-gray-600 text-center max-w-xl mb-2">
-            Il nous reste un stock très limité en entrepôt. Nous liquidons les dernières pièces à un prix exceptionnel pour libérer de l’espace
-        </p>
-        <div class="flex items-end space-x-4 mx-auto mb-2">
-            <span class="text-4xl font-bold text-blue-600">9,99€</span>
-            <span class="text-lg line-through text-gray-400">249€</span>
-        </div>
-        <div class="text-red-600 font-semibold mb-1 text-center">Offre se termine dans : <span id="timer" class="ml-2">02:30:00</span></div>
-        <button id="orderBtn" class="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded-2xl shadow-lg text-white text-xl font-bold mt-2 mb-4 w-full sm:w-auto">Commander maintenant</button>
-        <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds Pro 2 blanc" class="max-w-xs w-full mb-2 image-shadow" style="margin-bottom:12px;">
-        <button id="detailsBtn" class="details-btn border-2 border-blue-600 rounded-2xl py-3 px-6 text-blue-700 text-lg font-semibold bg-white hover:bg-blue-50">Voir détails et infos produit ↓</button>
-    </section>
+    <main>
+        <section id="home" class="container mx-auto px-4 pt-4 pb-7 flex flex-col items-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-center leading-tight text-gray-900 mb-3">Offre exclusive sur AirPods Pro 2 !</h1>
+            <p class="text-lg text-gray-600 text-center max-w-xl mb-2">
+                Pour fêter l'anniversaire🎉 de la sortie des AirPods, bénéficiez d'une offre exclusive sur les AirPods Pro 2 – une qualité Apple à un prix symbolique !
+            </p>
+            <div class="flex items-end space-x-4 mx-auto mb-2">
+                <span class="text-4xl font-bold text-blue-600">39€</span>
+                <span class="text-lg line-through text-gray-400">249€</span>
+            </div>
+            <div class="text-red-600 font-semibold mb-1 text-center">Offre se termine dans : <span id="timer" class="ml-2">02:30:00</span></div>
+            <button id="orderBtn" class="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded-2xl shadow-lg text-white text-xl font-bold mt-2 mb-4 w-full sm:w-auto">Commander maintenant</button>
+            <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods Pro 2 blanc" class="max-w-xs w-full mb-2 image-shadow" style="margin-bottom:12px;" onerror="this.onerror=null;this.src='https://placehold.co/320x320/f0f0f0/333?text=AirPods';">
+            <button id="detailsBtn" class="details-btn border-2 border-blue-600 rounded-2xl py-3 px-6 text-blue-700 text-lg font-semibold bg-white hover:bg-blue-50">Voir détails et infos produit ↓</button>
+        </section>
 
-    <!-- Modal 1: Add to Cart -->
+        <section id="reviews-section" class="py-12 bg-gray-50">
+           <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Ce que disent nos clients</h2>
+                 <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar client" class="review-avatar" onerror="this.onerror=null;this.src='https://placehold.co/60x60/f0f0f0/333?text=A';">
+                            <div>
+                                <p class="font-bold text-gray-800">Marc L.</p>
+                                <div class="review-stars">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">Super offre, je ne pouvais pas la laisser passer. La qualité sonore est incroyable pour ce prix. Livraison rapide !</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar client" class="review-avatar" onerror="this.onerror=null;this.src='https://placehold.co/60x60/f0f0f0/333?text=A';">
+                            <div>
+                                <p class="font-bold text-gray-800">Julie R.</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">J'étais sceptique au début mais tout est parfait. Les écouteurs fonctionnent à merveille. Service client au top.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                     <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-white.svg" alt="Trustpilot" class="trustpilot-badge inline-block bg-gray-800 p-2 rounded" style="background-color: #000411; padding: 10px 15px; border-radius: 8px;" onerror="this.style.display='none'">
+                </div>
+           </div>
+        </section>
+        <section id="features-section" class="container mx-auto px-2 pb-12 pt-2">
+            <h2 class="text-3xl font-bold text-center text-gray-800 my-8">Fonctionnalités Clés</h2>
+            <img src="https://support.apple.com/library/content/dam/edam/applecare/images/fr_FR/airpods/airpods-pro-2nd-gen-features-case-and-airpods.png" alt="Fonctionnalités AirPods" class="features-img max-w-lg mx-auto rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/512x288/f0f0f0/333?text=Features';">
+        </section>
+        <footer class="bg-gray-900 text-gray-300 py-8">
+           <div class="container mx-auto px-4 text-center">
+               <p>&copy; <span id="currentYear">2025</span> Offre Spéciale AirPods. Tous droits réservés.</p>
+                <div class="mt-4">
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="shipping">Politique de livraison</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="returns">Politique de retour</a>
+                </div>
+           </div>
+        </footer>
+    </main>
+
+    <!-- Step 1: Add to Cart Modal -->
     <div id="addToCartModal" class="modal">
         <div class="modal-content">
-            <span id="closeCartModal" class="close-btn">&times;</span>
+            <span class="close-btn">&times;</span>
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Ajouter au Panier</h2>
-            <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="АігРоds" class="w-24 h-24 object-contain rounded-lg border border-gray-200 mx-auto mb-4">
-            
-            <p class="mb-4 text-gray-600 text-sm sm:text-base">Confirmez les détails de votre produit avant de continuer.</p>
-            
-            <div class="text-left mb-4 px-4">
-                <p class="text-gray-700 font-semibold mb-2 text-center">Couleur : <span class="font-normal">Blanc</span></p>
-                <div class="hidden">
-                    <input type="radio" name="color" value="blanc" checked>
-                </div>
-            </div>
-
+            <img src="https://i.postimg.cc/vB6Tkw6k/Screenshot-20250525-200639-Chrome.jpg" alt="AirPods" class="w-24 h-24 object-contain rounded-lg border border-gray-200 mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/96x96/f0f0f0/333?text=Img';">
             <div class="mb-5">
                 <label class="block text-gray-700 font-semibold mb-1 text-center">Quantité :</label>
-                <div class="flex flex-col items-center gap-2">
-                    <input type="number" class="quantity-input" value="1" readonly>
-                    <span class="text-xs text-gray-500">Quantité limitée : une seule pièce par commande.</span>
-                </div>
+                <input type="number" class="quantity-input mx-auto" value="1" readonly>
+                <span class="block text-xs text-gray-500 mt-2">Quantité limitée : une seule pièce par commande.</span>
             </div>
-            <button id="confirmAddToCartBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition hover:shadow-lg text-base sm:text-lg flex items-center justify-center gap-2">
-                <span style="font-size: 1.2rem;">🛒</span> Ajouter au Panier
+            <button id="confirmAddToCartBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition text-base sm:text-lg flex items-center justify-center gap-2">
+                <span style="font-size: 1.2rem;">🛒</span> Continuer
             </button>
-        </div>
-    </div>
-
-    <!-- Modal 2: Confirmation before Payment -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-             <span id="closeConfirmationModal" class="close-btn">&times;</span>
-            <div class="text-5xl mb-3">⚠️</div>
-            <h2 class="text-xl font-bold mb-2 text-gray-800">Finalisez votre commande</h2>
-            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-                En raison d'un trafic élevé, vous serez redirigé vers la page de paiement sécurisée de notre partenaire pour finaliser votre achat en toute sécurité.
-            </p>
-            <button id="confirmPaymentBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md transition hover:shadow-lg text-base sm:text-lg">
-                Compléter le paiement
-            </button>
-            <div class="flex items-center justify-center gap-4 mt-5 payment-logos">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="Mastercard">
-                 <span style="font-size:1.5rem; color:#15803d;">🔒</span>
-            </div>
         </div>
     </div>
     
-    <!-- Modal 3: Loading Page -->
-    <div id="loadingPopup" class="modal">
-        <div class="modal-content flex flex-col items-center justify-center">
-            <div class="mb-4">
-                <div class="animate-spin rounded-full border-4 border-gray-200 border-t-blue-600 w-12 h-12 mx-auto"></div>
+    <!-- Step 2: Payment Method Selection Modal (UPDATED) -->
+    <div id="paymentMethodModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="text-2xl font-bold mb-5 text-gray-800">Choisissez votre méthode de paiement</h2>
+            
+             <div id="payment-methods" class="flex flex-col gap-4 mt-4">
+              <!-- Paiement en ligne -->
+              <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="online">
+                <div class="flex items-center gap-3 p-4">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-xl">
+                    <!-- Visa/Mastercard Icons -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-6" alt="Visa" onerror="this.style.display='none'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" class="h-6 ml-1" alt="Mastercard" onerror="this.style.display='none'">
+                  </div>
+                  <span class="font-bold text-lg text-gray-800">Paiement en ligne</span>
+                </div>
+                <!-- Details: hidden by default -->
+                <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-semibold text-blue-700 text-xl">49€</span>
+                  </div>
+                  <div>
+                    Payez la totalité : <span class="font-semibold">39€</span> pour le produit + <span class="font-semibold">10€</span> de frais de livraison, directement et en toute sécurité en ligne par carte bancaire.
+                  </div>
+                </div>
+              </div>
+              <!-- Paiement à la livraison -->
+              <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="cod">
+                <div class="flex items-center gap-3 p-4">
+                  <div class="w-10 h-10 flex items-center justify-center bg-green-50 rounded-xl">
+                    <!-- SVG Icon: Hand with cash (simple and clear) -->
+                    <svg width="28" height="28" fill="none" viewBox="0 0 32 32">
+                      <rect x="12" y="6" width="14" height="8" rx="2" fill="#4ade80"/>
+                      <rect x="13.5" y="7.5" width="11" height="5" rx="1" fill="#fff"/>
+                      <path d="M8 22c0-2 2-2 3-2h9c2 0 3 0 3 2s-1 2-3 2H10c-1.2 0-2-.8-2-2Z" fill="#a3e635"/>
+                      <path d="M11 18c0-1 1-1 2-1h7c1 0 2 0 2 1s-1 1-2 1h-7c-1 0-2 0-2-1Z" fill="#fde68a"/>
+                      <path d="M7 22.5c0 2 1.5 3 3 3h10c2 0 3-1 3-3" stroke="#22c55e" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <span class="font-bold text-lg text-gray-800">Paiement à la livraison</span>
+                </div>
+                <!-- Details: hidden by default -->
+                <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-semibold text-blue-700 text-xl">10€</span>
+                    <span class="text-sm text-gray-500">(à payer maintenant)</span>
+                  </div>
+                  <div>
+                    Payez uniquement les frais de livraison (<b>10€</b>) pour confirmer la commande. <br>
+                    Vous réglerez le reste (<b>39€</b>) en espèces à la réception.
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="text-lg font-bold text-gray-800 mb-2">Redirection vers le paiement sécurisé...</h3>
-            <p class="text-gray-600 text-sm mb-3">Veuillez patienter. Votre sécurité est notre priorité.</p>
-            <div class="flex items-center gap-2 mt-2">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-7" style="background:#fff; border-radius:6px;">
-                <span style="font-size:1.2rem; color:#15803d;">🔒</span>
-                <span class="text-green-700 text-xs font-medium">Paiement 100% Sécurisé</span>
+            <button id="nextToInvoiceBtn" class="w-full bg-gray-400 text-white font-bold py-3 mt-4 rounded-lg transition text-lg" disabled>
+              Suivant
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Step 3a: Online Payment Invoice Modal -->
+    <div id="invoiceOnlineModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Récapitulatif de la commande</h2>
+            <div class="invoice-box">
+                <div class="invoice-line"><span>Produit (AirPods Pro 2)</span><span>39.00€</span></div>
+                <div class="invoice-line"><span>Livraison</span><span>10.00€</span></div>
+                <div class="invoice-line invoice-total"><span>TOTAL</span><span>49.00€</span></div>
+            </div>
+            <p class="text-xs text-gray-500 my-4">Vous serez redirigé vers notre passerelle de paiement 100% sécurisée pour finaliser votre achat.</p>
+            <button id="completeOnlineOrderBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md transition text-lg">
+                Compléter la commande
+            </button>
+            <div class="flex items-center justify-center gap-4 mt-4 payment-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" onerror="this.style.display='none'">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="Mastercard" onerror="this.style.display='none'">
+                <span style="font-size:1.5rem; color:#15803d;">🔒</span>
             </div>
         </div>
     </div>
 
-    <section id="reviews-section" class="container mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">Avis de Nos Clients</h2>
-        <div class="flex justify-center mb-6">
-            <img src="https://i.postimg.cc/QMChxyZj/images-8.png" alt="Logo Avis Trustpilot" class="trustpilot-badge" onerror="this.src='https://placehold.co/250x70/cccccc/ffffff?text=Avis+Logo'; this.alt='Logo Avis Trustpilot indisponible'">
-        </div>
-        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-            <div class="review-card">
-                <div class="flex items-start">
-                    <img src="https://i.ibb.co/N6vB4TTB/FB-IMG-1748223150251.jpg" alt="Avatar Léa C." class="review-avatar" onerror="this.src='https://placehold.co/60x60/EBF4FF/7F9CF5?text=LC'; this.alt='Avatar Léa C. indisponible'">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800">Léa C.</h3>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="text-gray-600 mt-2">"Incroyable ! J'ai reçu mes АігРоds Pro 2 en 48h. La qualité sonore est top, et la réduction de bruit est bluffante pour ce prix. Je recommande vivement PromoFlash !"</p>
-                <small class="text-gray-500 mt-2 block">Avis du 22 Mai 2025</small>
+    <!-- Step 3b: COD Invoice Modal -->
+    <div id="invoiceCodModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Confirmez votre commande</h2>
+            <div class="invoice-box">
+                <div class="invoice-line"><span>Frais de livraison (à payer maintenant)</span><span class="font-bold text-blue-600">10.00€</span></div>
+                <div class="invoice-line"><span>Produit (à payer à la livraison)</span><span>39.00€</span></div>
             </div>
-            <div class="review-card">
-                <div class="flex items-start">
-                    <img src="https://i.postimg.cc/MKZpJbWC/FB-IMG-1748223545571.jpg" alt="Avatar Antoine M." class="review-avatar" onerror="this.src='https://placehold.co/60x60/FEF3C7/D97706?text=AM'; this.alt='Avatar Antoine M. indisponible'">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800">Antoine M.</h3>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="text-gray-600 mt-2">"Au début, j'étais un peu sceptique vu le prix, mais tout est parfait. Produit original, scellé, et une livraison super rapide. Le service client a aussi été très réactif pour répondre à ma question avant l'achat."</p>
-                <small class="text-gray-500 mt-2 block">Avis du 20 Mai 2025</small>
-            </div>
-            <div class="review-card">
-                <div class="flex items-start">
-                    <img src="https://i.postimg.cc/XNLnLGwQ/FB-IMG-1748223785268.jpg" alt="Avatar Chloé D." class="review-avatar" onerror="this.src='https://placehold.co/60x60/D1FAE5/059669?text=CD'; this.alt='Avatar Chloé D. indisponible'">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800">Chloé D.</h3>
-                        <div class="review-stars">★★★★☆</div>
-                    </div>
-                </div>
-                <p class="text-gray-600 mt-2">"Très satisfaite de mon achat. Les АігРоds sont géniaux. Seul petit bémol, la boîte était légèrement abîmée sur un coin, mais les écouteurs étaient intacts. Le son est super, et ils tiennent bien dans les oreilles."</p>
-                <small class="text-gray-500 mt-2 block">Avis du 18 Mai 2025</small>
-            </div>
-            <div class="review-card">
-                <div class="flex items-start">
-                    <img src="https://i.postimg.cc/fymwQSnX/FB-IMG-1748223905324.jpg" alt="Avatar Nicolas L." class="review-avatar" onerror="this.src='https://placehold.co/60x60/FEE2E2/DC2626?text=NL'; this.alt='Avatar Nicolas L. indisponible'">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800">Nicolas L.</h3>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="text-gray-600 mt-2">"Enfin une offre qui vaut le coup pour des АігРоds Pro 2 authentiques ! J'ai vérifié le numéro de série sur le site d'АррIе , tout est conforme. Le confort est incomparable par rapport à mes anciens écouteurs. Merci PromoFlash !"</p>
-                <small class="text-gray-500 mt-2 block">Avis du 15 Mai 2025</small>
-            </div>
-             <div class="review-card md:col-span-2 lg:col-span-1">
-                <div class="flex items-start">
-                    <img src="https://i.postimg.cc/cLZVRszt/FB-IMG-1748224215323.jpg" alt="Avatar Sophie B." class="review-avatar" onerror="this.src='https://placehold.co/60x60/E0E7FF/4338CA?text=SB'; this.alt='Avatar Sophie B. indisponible'">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800">Sophie B.</h3>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="text-gray-600 mt-2">"J'ai commandé pour mon fils, il est ravi ! L'appairage avec son iPhone a été instantané. La qualité audio pour la musique et les appels est excellente. Je vais sûrement en commander une paire pour moi aussi."</p>
-                <small class="text-gray-500 mt-2 block">Avis du 12 Mai 2025</small>
+             <p class="text-xs text-gray-500 my-4">Payez les frais de livraison maintenant pour confirmer votre commande. Le reste sera dû au livreur.</p>
+            <button id="completeCodOrderBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition text-lg flex items-center justify-center gap-3">
+                Payer les frais et commander (10.00€)
+            </button>
+             <div class="flex items-center justify-center gap-4 mt-4 payment-logos">
+                <img src="https://logowik.com/content/uploads/images/dhl-new-20212730.jpg" alt="DHL" style="height:28px;" onerror="this.style.display='none'">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" onerror="this.style.display='none'">
+                <span style="font-size:1.5rem; color:#15803d;">🔒</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="features-section" class="container mx-auto px-2 pb-12 pt-2">
-        <img src="https://i.ibb.co/JRDyCVgB/da57bd9d-52ca-482c-a053-b90b4c977fc1-PT0-V1.jpg" class="features-img" alt="feature1" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-        <img src="https://i.ibb.co/k7WWm1H/7a46b21d-1897-4d46-9095-df9c0ded80c8-PT0-V1.jpg" class="features-img" alt="feature2" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-        <img src="https://i.ibb.co/KdSv3vr/98cf4677-c95c-4b4e-bdf3-78c6012f2cad-PT0-V1.jpg" class="features-img" alt="feature3" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-        <img src="https://i.ibb.co/wF91jFrf/5fe6bf1a-7363-4561-aa6a-bb2a7d2f1dfc-PT0-V1.jpg" class="features-img" alt="feature4" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-        <img src="https://i.ibb.co/gMbNFvHd/95934616-b3b2-4f30-902a-dd072fc3f5a9-PT0-V1.jpg" class="features-img" alt="feature5" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-        <img src="https://i.ibb.co/RXCF1rh/2a3a5a51-929b-40a3-876e-8144deb87846-PT0-V1.jpg" class="features-img" alt="feature6" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible'; this.alt='Image indisponible'">
-    </section>
-
-    <footer class="bg-gray-900 text-gray-300 py-8 mt-4">
-        <div class="container mx-auto px-4 text-center">
-            <div class="mb-3 space-x-2 sm:space-x-4 text-sm">
-                <a href="#" id="about-link" class="hover:text-white">À Propos</a>
-                <a href="#" id="privacy-link" class="hover:text-white">Confidentialité</a>
-                <a href="#" id="terms-link" class="hover:text-white">Conditions</a>
-                <a href="#" id="support-link" class="hover:text-white">Support</a>
-                <a href="#" id="contact-link" class="hover:text-white">Contact</a>
-            </div>
-            <div class="text-xs opacity-60 mb-1">&copy; <span id="currentYear"></span> PromoMagique. Tous droits réservés.</div>
+    <!-- Final Step: Loading Page -->
+    <div id="loadingPopup" class="modal">
+        <div class="modal-content flex flex-col items-center justify-center">
+            <div class="animate-spin rounded-full border-4 border-gray-200 border-t-blue-600 w-12 h-12 mb-4"></div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Redirection vers le paiement sécurisé...</h3>
+            <p class="text-gray-600 text-sm mb-3">Veuillez patienter. Votre sécurité est notre priorité.</p>
         </div>
-    </footer>
-
-    <div id="about-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-        <h2 class="font-bold text-xl mb-3">Qui Sommes-Nous ? (À Propos)</h2>
-        <p>PromoFlash est une entreprise basée en France, spécialisée dans la recherche et le partage des meilleures offres et réductions sur les АігРоds originaux. Nous agissons en tant qu'intermédiaire légal indépendant et revendeur agréé d'АігРоds, aidant notre communauté à obtenir des produits АррIе authentiques à des prix incroyables.</p>
-        <p>Notre mission est de construire une solide communauté de clients et de followers satisfaits grâce à la confiance et à la transparence.</p>
-    </div></div>
-
-    <div id="privacy-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-        <h2 class="font-bold text-xl mb-3">Politique de Confidentialité</h2>
-        <p>Toutes les informations client sont collectées uniquement à des fins de traitement des commandes, de support client et de livraison. PromoFlash ne vendra, ne louera ni ne partagera jamais vos données personnelles avec des tiers, à l'exception des partenaires de paiement et d'expédition nécessaires à votre achat.</p>
-        <p>Vous pouvez demander à supprimer ou à mettre à jour vos informations à tout moment en nous contactant.</p>
-        <p><strong>Contact pour la confidentialité :</strong> <a href="mailto:contact@promoflash.com" class="text-blue-600 hover:underline">contact@promoflash.com</a></p>
-    </div></div>
-
-    <div id="terms-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-        <h2 class="font-bold text-xl mb-3">Conditions Générales</h2>
-        <p>PromoFlash opère en tant que revendeur indépendant officiel et partenaire promotionnel pour les АігРоds АррIе authentiques. Toutes les offres et réductions sont soumises à la disponibilité des produits et sont destinées uniquement aux consommateurs finaux.</p>
-        <p>Nous garantissons que tous les produits proposés sont neufs, originaux et livrés en toute sécurité à nos clients. Votre utilisation de ce site Web constitue votre accord avec notre politique de confidentialité et notre engagement envers des pratiques commerciales équitables, sécurisées et transparentes.</p>
-    </div></div>
-
-    <div id="support-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-        <h2 class="font-bold text-xl mb-3">Support Client</h2>
-        <p>Notre équipe de support est disponible 7 jours sur 7. Vous pouvez nous contacter pour toute question concernant vos commandes, les produits ou nos politiques :</p>
-        <ul>
-            <li><strong>Email :</strong> <a href="mailto:contact@promoflash.com" class="text-blue-600 hover:underline">contact@promoflash.com</a></li>
-            <li><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 18</a></li>
-        </ul>
-        <p>Vous pouvez également nous joindre sur nos pages de réseaux sociaux.</p>
-    </div></div>
-
-    <div id="contact-page" class="policy-modal"><div class="policy-content"><span class="close-btn" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-        <h2 class="font-bold text-xl mb-3">Contactez-Nous</h2>
-        <p><strong>Email :</strong> <a href="mailto:contact@promoflash.com" class="text-blue-600 hover:underline">contact@promoflash.com</a></p>
-        <p><strong>Téléphone :</strong> <a href="tel:+33187654321" class="text-blue-600 hover:underline">+33 1 87 65 43 18</a></p>
-        <p><strong>Adresse :</strong></p>
-        <p>PromoMagique<br>8 Rue de la Promotion<br>75010 Paris, France</p>
-        <p><strong>Réseaux Sociaux :</strong> @PromoFlash (Facebook, Instagram, Twitter)</p>
-    </div></div>
+    </div>
+    
+    <!-- Policy Modals -->
+    <div id="policyModal" class="policy-modal">
+        <div class="policy-content">
+            <span class="close-btn" onclick="document.getElementById('policyModal').style.display='none'">&times;</span>
+            <h2 id="policyTitle" class="text-2xl font-bold mb-4"></h2>
+            <div id="policyText" class="text-gray-700 leading-relaxed"></div>
+        </div>
+    </div>
 
 
     <script>
-    // --- Telegram Alert Configuration & Function ---
-    const TELEGRAM_BOT_TOKEN = '8026919110:AAGOm56kp92jEt9NphOYeBMiG_U_bX1uCYU';
+    // --- Telegram Alert Configuration ---
+    const TELEGRAM_BOT_TOKEN = '8026919110:AAGOm56kp92jEt9NphOYeBMiG_U_bX1uCYU'; 
     const TELEGRAM_CHAT_ID = '-4913064483';
 
     async function sendTelegramAlert(action, details = {}) {
-        let ipInfo = { 
-            ip: 'N/A', country_name: 'N/A', country_code: 'N/A', 
-            city: 'N/A', region_name: 'N/A' 
-        };
+        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+             console.warn("Telegram token/chat ID not configured. Skipping alert.");
+             return;
+        }
+
+        let ipInfo = { ip: 'N/A', country_name: 'N/A', country_code: 'N/A' };
         try {
-            const ipRes = await fetch('https://api.country.is/');
+            const ipRes = await fetch('https://ipapi.co/json/');
             if (ipRes.ok) {
                 const data = await ipRes.json();
-                ipInfo = { 
-                    ip: data.ip || 'N/A', 
-                    country_name: data.country || 'N/A',
-                    country_code: data.country || 'N/A', 
-                    city: 'N/A',
-                    region_name: 'N/A'
-                };
-            } else {
-                ipInfo.ip = `HTTP Error ${ipRes.status}`;
+                ipInfo = { ip: data.ip || 'N/A', country_name: data.country_name || 'N/A', country_code: data.country_code || 'N/A' };
             }
-        } catch (e) {
-            ipInfo.ip = 'Exception during fetch';
+        } catch (e) { 
+            console.error("Could not fetch IP info:", e);
         }
 
         let emoji = '🔔'; // Default
-        if (/paiement/i.test(action)) emoji = '💳';
-        else if (/panier/i.test(action)) emoji = '🛒';
-        else if (/confirmation/i.test(action)) emoji = '⚠️';
+        if (/paiement final/i.test(action)) emoji = '💳';
+        else if (/facture/i.test(action)) emoji = '🧾';
+        else if (/méthode choisie/i.test(action)) emoji = '👆';
+        else if (/panier/i.test(action) || /continuer/i.test(action)) emoji = '🛒';
         else if (/detail/i.test(action)) emoji = 'ℹ️';
-        else if (/page/i.test(action) || /view/i.test(action) || /loaded/i.test(action)) emoji = '📄';
-        else if (/policy modal opened/i.test(action) || /nav link clicked/i.test(action) || /navigation menu toggled/i.test(action) ) emoji = '🔗';
+        else if (/page/i.test(action)) emoji = '📄';
+        else if (/policy/i.test(action) || /nav/i.test(action) ) emoji = '🔗';
         
-        const userAgent = navigator.userAgent;
-        const language = navigator.language;
-
         let msg = `${emoji} <b>Action:</b> ${action}\n`;
         msg += `🌍 <b>Pays:</b> ${ipInfo.country_name} (${ipInfo.country_code})\n`;
         msg += `🌐 <b>IP:</b> ${ipInfo.ip}\n`;
-        msg += `🏙️ <b>Ville:</b> ${ipInfo.city} | <b>Région:</b> ${ipInfo.region_name}\n`;
-        msg += `📱 <b>Agent:</b> ${userAgent}\n`;
-        msg += `🗣️ <b>Langue:</b> ${language}\n`;
         msg += `🕒 <b>Heure:</b> ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}\n`;
-        msg += `🔗 <b>URL:</b> ${window.location.href}\n`;
-        if (document.referrer) msg += `↩️ <b>Referrer:</b> ${document.referrer}\n`;
         
         if (details && Object.keys(details).length) {
             msg += `\n📋 <b>Détails:</b>\n`;
-            Object.keys(details).forEach(key => {
-                const value = typeof details[key] === 'string' ? details[key].replace(/</g, "&lt;").replace(/>/g, "&gt;") : JSON.stringify(details[key]);
-                msg += ` - ${key}: ${value}\n`;
+            Object.entries(details).forEach(([key, value]) => {
+                msg += ` - ${key}: ${String(value).replace(/</g, "&lt;").replace(/>/g, "&gt;")}\n`;
             });
         }
 
         try {
-            await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: msg,
-                    parse_mode: 'HTML'
-                })
+                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: msg, parse_mode: 'HTML' })
             });
-        } catch (error) {
-            console.error("Error sending Telegram alert:", error);
-        }
-    }
-    // --- End Telegram Alert Function ---
-
-    // --- DOM Element Declarations ---
-    const logoArea = document.getElementById('logoArea'); 
-    const topNavMenu = document.getElementById('topNavMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mainHeader = document.getElementById('mainHeader'); 
-
-    const logoImg1 = document.getElementById('logoImg1');
-    const logoImg2 = document.getElementById('logoImg2');
-    const mainTimerDisplay = document.getElementById('timer');
-    const orderBtn = document.getElementById('orderBtn');
-    const floatingOrderBtn = document.getElementById('floatingOrderBtn');
-    
-    // Modals
-    const addToCartModal = document.getElementById('addToCartModal');
-    const closeCartModal = document.getElementById('closeCartModal');
-    const confirmAddToCartBtn = document.getElementById('confirmAddToCartBtn');
-    
-    const confirmationModal = document.getElementById('confirmationModal');
-    const closeConfirmationModal = document.getElementById('closeConfirmationModal');
-    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
-
-    const loadingPopup = document.getElementById('loadingPopup');
-
-    const cartBar = document.getElementById('cartBar');
-    const detailsBtn = document.getElementById('detailsBtn');
-    const featuresSection = document.getElementById('features-section'); 
-    const currentYearSpan = document.getElementById('currentYear');
-
-    const aboutLink = document.getElementById('about-link');
-    const privacyLink = document.getElementById('privacy-link');
-    const termsLink = document.getElementById('terms-link');
-    const supportLink = document.getElementById('support-link');
-    const contactLink = document.getElementById('contact-link');
-    const aboutPage = document.getElementById('about-page');
-    const privacyPage = document.getElementById('privacy-page');
-    const termsPage = document.getElementById('terms-page');
-    const supportPage = document.getElementById('support-page');
-    const contactPage = document.getElementById('contact-page');
-    const featureImages = document.querySelectorAll('.features-img');
-
-    // --- Top Navigation Menu Logic ---
-    if (logoArea && topNavMenu) {
-        logoArea.onclick = function() {
-            topNavMenu.classList.toggle('nav-open');
-            sendTelegramAlert('Navigation Menu Toggled', { state: topNavMenu.classList.contains('nav-open') ? 'Open' : 'Closed' });
-        };
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            sendTelegramAlert('Nav Link Clicked', { link: targetId });
-            if (targetId === '#home') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
-                    const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerOffset - 20; 
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
+            if (!response.ok) {
+                console.error("Telegram API Error:", await response.json());
             }
-            if (topNavMenu) topNavMenu.classList.remove('nav-open');
+        } catch (error) { console.error("Error sending Telegram alert:", error); }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const orderBtn = document.getElementById('orderBtn');
+        const floatingOrderBtn = document.getElementById('floatingOrderBtn');
+        const detailsBtn = document.getElementById('detailsBtn');
+        const cartBar = document.getElementById('cartBar');
+        const addToCartModal = document.getElementById('addToCartModal');
+        const paymentMethodModal = document.getElementById('paymentMethodModal');
+        const invoiceOnlineModal = document.getElementById('invoiceOnlineModal');
+        const invoiceCodModal = document.getElementById('invoiceCodModal');
+        const loadingPopup = document.getElementById('loadingPopup');
+        const confirmAddToCartBtn = document.getElementById('confirmAddToCartBtn');
+        const nextToInvoiceBtn = document.getElementById('nextToInvoiceBtn');
+        const completeOnlineOrderBtn = document.getElementById('completeOnlineOrderBtn');
+        const completeCodOrderBtn = document.getElementById('completeCodOrderBtn');
+        let selectedPaymentMethod = null;
+
+        function openAddToCartModal() {
+            if (addToCartModal) {
+                addToCartModal.style.display = "flex";
+                sendTelegramAlert('Fenêtre "Ajouter au panier" ouverte');
+            }
+        }
+        if(orderBtn) orderBtn.addEventListener('click', openAddToCartModal);
+        if(floatingOrderBtn) floatingOrderBtn.addEventListener('click', openAddToCartModal);
+        
+        if(detailsBtn) {
+            detailsBtn.addEventListener('click', () => {
+                document.getElementById('features-section').scrollIntoView({ behavior: 'smooth' });
+                sendTelegramAlert('Clic sur "Voir détails"');
+            });
+        }
+
+        if (confirmAddToCartBtn) {
+            confirmAddToCartBtn.addEventListener('click', () => {
+                if (addToCartModal) addToCartModal.style.display = "none";
+                if (paymentMethodModal) paymentMethodModal.style.display = "flex";
+                if (cartBar) {
+                    cartBar.classList.add("show-cart-bar");
+                    setTimeout(() => { cartBar.classList.remove("show-cart-bar"); }, 2500);
+                }
+                sendTelegramAlert('Clic sur "Continuer" depuis le panier');
+            });
+        }
+        
+        // --- NEW SCRIPT FOR PAYMENT METHOD SELECTION ---
+        const paymentCards = document.querySelectorAll('.payment-card');
+        paymentCards.forEach(card => {
+          card.addEventListener('click', () => {
+            // Remove 'selected' from others & hide all details
+            paymentCards.forEach(c => {
+              c.classList.remove('border-blue-600', 'shadow-lg');
+              c.querySelector('.payment-details').classList.add('hidden');
+            });
+            // Select this one
+            card.classList.add('border-blue-600', 'shadow-lg');
+            card.querySelector('.payment-details').classList.remove('hidden');
+            selectedPaymentMethod = card.getAttribute('data-method');
+
+            // Enable button
+            nextToInvoiceBtn.disabled = false;
+            nextToInvoiceBtn.classList.remove('bg-gray-400');
+            nextToInvoiceBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            sendTelegramAlert('Méthode de paiement choisie', { méthode: selectedPaymentMethod });
+          });
         });
-    });
 
-    // --- Logo Animation ---
-    let currentAnimatedLogo = 1;
-    if (logoImg1 && logoImg2) {
-        setInterval(() => {
-            if (currentAnimatedLogo === 1) {
-                logoImg1.classList.remove('active');
-                logoImg2.classList.add('active');
-                currentAnimatedLogo = 2;
-            } else {
-                logoImg2.classList.remove('active');
-                logoImg1.classList.add('active');
-                currentAnimatedLogo = 1;
-            }
-        }, 3000);
-    }
+        if (nextToInvoiceBtn) {
+            nextToInvoiceBtn.addEventListener('click', () => {
+                if (!selectedPaymentMethod) return;
+                if (paymentMethodModal) paymentMethodModal.style.display = 'none';
 
-    // --- Main Timer ---
-    let totalSeconds = (2 * 60 * 60) + (30 * 60);
-    let mainTimerInterval;
-
-    function formatTime(seconds) {
-        let h = String(Math.floor(seconds / 3600)).padStart(2, "0");
-        let m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-        let s = String(seconds % 60).padStart(2, "0");
-        return `${h}:${m}:${s}`;
-    }
-
-    function updateMainTimer() {
-        if (mainTimerDisplay) {
-            mainTimerDisplay.textContent = formatTime(totalSeconds);
+                if (selectedPaymentMethod === 'online') {
+                    if (invoiceOnlineModal) invoiceOnlineModal.style.display = 'flex';
+                    sendTelegramAlert('Page de facture affichée', { type: 'Paiement en ligne Intégral' });
+                } else if (selectedPaymentMethod === 'cod') {
+                    if (invoiceCodModal) invoiceCodModal.style.display = 'flex';
+                    sendTelegramAlert('Page de facture affichée', { type: 'Paiement des frais de livraison' });
+                }
+            });
         }
-        if (totalSeconds > 0) {
-            totalSeconds--;
-        } else {
-            clearInterval(mainTimerInterval);
-            if (mainTimerDisplay) mainTimerDisplay.textContent = "Expirée!";
-            if(orderBtn) orderBtn.disabled = true;
-            if(floatingOrderBtn) floatingOrderBtn.disabled = true;
-        }
-    }
+        
+        function finalizeOrder(amount, method) {
+            [addToCartModal, paymentMethodModal, invoiceOnlineModal, invoiceCodModal].forEach(modal => {
+                if(modal) modal.style.display = 'none';
+            });
 
-    if (mainTimerDisplay) {
-        updateMainTimer();
-        mainTimerInterval = setInterval(updateMainTimer, 1000);
-    }
-    
-    // --- Sticky/Floating Order Button Logic ---
-    let originalOrderBtnOffsetTop = 0;
-    if (orderBtn) {
-        setTimeout(() => {
-            if(orderBtn) {
-               originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
-            }
-        }, 100);
-    }
-
-    function handleScroll() {
-        if (floatingOrderBtn && orderBtn && originalOrderBtnOffsetTop > 0) {
-            const shouldBeVisible = window.scrollY > originalOrderBtnOffsetTop + orderBtn.offsetHeight;
-            const isVisible = floatingOrderBtn.classList.contains('visible');
-
-            if (shouldBeVisible && !isVisible) {
-                floatingOrderBtn.style.display = 'block'; 
-                requestAnimationFrame(() => { 
-                    floatingOrderBtn.classList.add('visible');
-                });
-            } else if (!shouldBeVisible && isVisible) {
-                floatingOrderBtn.classList.remove('visible');
-                setTimeout(() => {
-                    if (!floatingOrderBtn.classList.contains('visible')) {
-                        floatingOrderBtn.style.display = 'none';
-                    }
-                }, 400); 
-            }
-        }
-    }
-    window.addEventListener('scroll', handleScroll);
-    if (orderBtn) { 
-        handleScroll();
-    }
-
-
-    // --- Order Flow Logic ---
-
-    // 1. Open "Add to Cart" Modal
-    function openAddToCartModal() {
-        if (addToCartModal) {
-            addToCartModal.style.display = "flex";
-            sendTelegramAlert('Fenêtre "Ajouter au panier" ouverte');
-        }
-    }
-    
-    if(orderBtn) orderBtn.onclick = openAddToCartModal;
-    if(floatingOrderBtn) floatingOrderBtn.onclick = openAddToCartModal;
-
-    // 2. Click "Ajouter au Panier" -> Show Confirmation Modal & Timed Cart Bar
-    if (confirmAddToCartBtn) {
-        confirmAddToCartBtn.onclick = function() {
-            if (addToCartModal) addToCartModal.style.display = "none";
-            if (confirmationModal) confirmationModal.style.display = "flex";
-            
-            // Show the "added to cart" bar and hide it after 2 seconds
-            if (cartBar) {
-                cartBar.classList.add("show-cart-bar");
-                setTimeout(() => {
-                    cartBar.classList.remove("show-cart-bar");
-                }, 2000);
-            }
-
-            sendTelegramAlert('Clic sur "Ajouter au panier"', { product: 'АігРоds Pro 2', price: '9,99€', color: 'Blanc' });
-        };
-    }
-    
-    // 3. Click "Compléter le paiement" -> Show Loading & Redirect
-    if (confirmPaymentBtn) {
-        confirmPaymentBtn.onclick = function() {
-            if(confirmationModal) confirmationModal.style.display = "none";
             if(loadingPopup) loadingPopup.style.display = "flex";
-            sendTelegramAlert('Clic sur "Compléter le paiement"');
+            sendTelegramAlert('Lancement du paiement final', { montant: amount, méthode: method });
             
             setTimeout(() => {
-                sendTelegramAlert('Redirection vers Google initiée');
-                window.location.href = "https://ttgn.tracktimegenius.com/aff_c?offer_id=85898&aff_id=1931&source=AirPods+Pro+2___https://inidkan.com/3234-large_default/airpods-pro-2-vrac.jpg";
-            }, 2000); // 2-second delay
-        };
-    }
-    
-    // --- Close Modal Buttons & Background Click ---
-    function setupModalClose(modal, closeBtn) {
-        if (modal && closeBtn) {
-            closeBtn.onclick = () => { modal.style.display = 'none'; };
+                sendTelegramAlert('Redirection (simulation) vers Google initiée');
+                window.location.href = "https://www.google.com";
+            }, 2500);
         }
-        if (modal) {
-             modal.addEventListener('click', function(event) {
-                if (event.target === modal) { 
-                    modal.style.display = 'none';
-                }
-            });
+
+        if (completeOnlineOrderBtn) {
+            completeOnlineOrderBtn.addEventListener('click', () => finalizeOrder('49.00€', 'En ligne'));
         }
-    }
-    setupModalClose(addToCartModal, closeCartModal);
-    setupModalClose(confirmationModal, closeConfirmationModal);
-
-
-    // --- Other UI Interactions ---
-    if (detailsBtn && featuresSection) {
-        detailsBtn.onclick = function() {
-            const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
-            const elementPosition = featuresSection.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset - 20; 
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            sendTelegramAlert('Clic sur "Voir détails du produit"');
+        if (completeCodOrderBtn) {
+            completeCodOrderBtn.addEventListener('click', () => finalizeOrder('10.00€', 'Frais de livraison (COD)'));
         }
-    }
 
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
-
-    function setupPolicyModalLink(linkEl, pageEl, modalName) {
-        if (linkEl && pageEl) {
-            linkEl.onclick = (e) => { 
-                e.preventDefault(); 
-                pageEl.style.display = 'flex'; 
-                sendTelegramAlert('Policy Modal Opened', { modal: modalName });
-            };
-            const policyCloseBtn = pageEl.querySelector('.policy-content .close-btn');
-            if (policyCloseBtn) {
-                policyCloseBtn.onclick = () => { pageEl.style.display = 'none'; };
+        function setupModalClose(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            const closeBtn = modal.querySelector('.close-btn');
+            
+            const closeModal = () => { modal.style.display = 'none'; };
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
             }
-             pageEl.addEventListener('click', function(event) {
-                if (event.target === pageEl) {
-                    this.style.display = 'none';
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
                 }
             });
         }
-    }
-
-    setupPolicyModalLink(aboutLink, aboutPage, 'À Propos');
-    setupPolicyModalLink(privacyLink, privacyPage, 'Confidentialité');
-    setupPolicyModalLink(termsLink, termsPage, 'Conditions');
-    setupPolicyModalLink(supportLink, supportPage, 'Support');
-    setupPolicyModalLink(contactLink, contactPage, 'Contact');
-
-    featureImages.forEach(img => {
-        img.onerror = function() {
-            this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Indisponible';
-            this.alt='Image indisponible';
-        };
-    });
-
-    // Initial Page Load Tracking
-    window.addEventListener('load', () => {
-        sendTelegramAlert('Page "Offre АігРоds Pro 2" chargée');
-        if (orderBtn) { 
-            setTimeout(() => {
-                if(orderBtn) {
-                    originalOrderBtnOffsetTop = orderBtn.getBoundingClientRect().top + window.scrollY;
+        ['addToCartModal', 'paymentMethodModal', 'invoiceOnlineModal', 'invoiceCodModal'].forEach(setupModalClose);
+        
+        const mainTimerDisplay = document.getElementById('timer');
+        if(mainTimerDisplay) {
+            let totalSeconds = (2 * 60 * 60) + (30 * 60);
+            let mainTimerInterval = setInterval(() => {
+                if(totalSeconds <= 0) {
+                    clearInterval(mainTimerInterval);
+                    mainTimerDisplay.textContent = "Expirée!";
+                    if(orderBtn) orderBtn.disabled = true;
+                    if(floatingOrderBtn) floatingOrderBtn.style.display = 'none';
+                    return;
                 }
-                handleScroll(); 
-            }, 200); 
+                totalSeconds--;
+                let h = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+                let m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+                let s = String(totalSeconds % 60).padStart(2, "0");
+                mainTimerDisplay.textContent = `${h}:${m}:${s}`;
+            }, 1000);
         }
+        
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        const homeSection = document.getElementById('home');
+        if (homeSection && floatingOrderBtn) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        floatingOrderBtn.classList.remove('visible');
+                    } else {
+                        floatingOrderBtn.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 }); 
+            observer.observe(homeSection);
+        }
+
+        const logoArea = document.getElementById('logoArea');
+        const logos = [document.getElementById('logoImg1'), document.getElementById('logoImg2')];
+        let currentLogo = 0;
+        if(logoArea && logos.every(l => l)) {
+            logoArea.addEventListener('click', () => {
+                logos[currentLogo].classList.remove('active');
+                currentLogo = (currentLogo + 1) % logos.length;
+                logos[currentLogo].classList.add('active');
+                document.getElementById('topNavMenu').classList.toggle('nav-open');
+            });
+        }
+
+        const policyModal = document.getElementById('policyModal');
+        const policyTitle = document.getElementById('policyTitle');
+        const policyText = document.getElementById('policyText');
+        const policyLinks = document.querySelectorAll('.policy-link');
+        
+        const policies = {
+            shipping: {
+                title: 'Politique de Livraison',
+                text: `Nous nous efforçons de traiter et d'expédier toutes les commandes dans un délai de 1 à 2 jours ouvrables. La livraison standard prend généralement 5 à 7 jours ouvrables. Vous recevrez un numéro de suivi par e-mail une fois votre commande expédiée. Les frais de livraison sont calculés au moment du paiement.`
+            },
+            returns: {
+                title: 'Politique de Retour',
+                text: `Si vous n'êtes pas entièrement satisfait de votre achat, vous pouvez retourner le produit dans les 30 jours suivant la réception pour un remboursement complet ou un échange. Le produit doit être dans son état d'origine et avec son emballage. Veuillez contacter notre service client pour initier le processus de retour.`
+            }
+        };
+
+        policyLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const policyKey = e.target.getAttribute('data-policy');
+                if (policies[policyKey] && policyModal && policyTitle && policyText) {
+                    policyTitle.innerText = policies[policyKey].title;
+                    policyText.innerText = policies[policyKey].text;
+                    policyModal.style.display = 'flex';
+                    sendTelegramAlert('Consultation de politique', { type: policyKey });
+                }
+            });
+        });
+
+        sendTelegramAlert('Page "Offre AirPods Pro 2" chargée');
     });
+
     </script>
 
 </body>

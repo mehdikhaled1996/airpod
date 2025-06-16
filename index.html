@@ -280,8 +280,8 @@ pintrk('page');
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Récapitulatif de la commande</h2>
             <div class="invoice-box">
                 <div class="invoice-line"><span>Produit (АігРоdѕ Рго  2)</span><span>39.00€</span></div>
-                <div class="invoice-line"><span>Livraison</span><span>10.00€</span></div>
-                <div class="invoice-line invoice-total"><span>TOTAL</span><span>49.00€</span></div>
+                <div class="invoice-line"><span>Livraison</span><span>9,99€</span></div>
+                <div class="invoice-line invoice-total"><span>TOTAL</span><span>49,99€</span></div>
             </div>
             <p class="text-xs text-gray-500 my-4">Vous serez redirigé vers notre passerelle de paiement 100% sécurisée pour finaliser votre achat.</p>
             <button id="completeOnlineOrderBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md transition text-lg">
@@ -301,7 +301,7 @@ pintrk('page');
             <span class="close-btn">&times;</span>
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Confirmez votre commande</h2>
             <div class="invoice-box">
-                <div class="invoice-line"><span>Frais de livraison (à payer maintenant)</span><span class="font-bold text-blue-600">10.00€</span></div>
+                <div class="invoice-line"><span>Frais de livraison (à payer maintenant)</span><span class="font-bold text-blue-600">9,99€</span></div>
                 <div class="invoice-line"><span>Produit (à payer à la livraison)</span><span>39.00€</span></div>
             </div>
              <p class="text-xs text-gray-500 my-4">Pour démarrer le processus d'expédition, veuillez régler les frais de livraison de notre partenaire <b>DHL</b>. Le montant restant du produit sera dû au livreur à la réception.</p>
@@ -494,7 +494,7 @@ pintrk('page');
             completeOnlineOrderBtn.addEventListener('click', () => finalizeOrder('49.00€', 'En ligne'));
         }
         if (completeCodOrderBtn) {
-            completeCodOrderBtn.addEventListener('click', () => finalizeOrder('10.00€', 'Frais de livraison (COD)'));
+            completeCodOrderBtn.addEventListener('click', () => finalizeOrder('9,99€', 'Frais de livraison (COD)'));
         }
 
         function setupModalClose(modalId) {

